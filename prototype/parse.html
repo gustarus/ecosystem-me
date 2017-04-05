@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fetch colors from image ornament</title>
+
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    #canvas {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    #output {
+      width: 500px;
+      height: 700px;
+      display: inline-block;
+      vertical-align: top;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="canvas"></canvas>
+
+<textarea id="output"></textarea>
+
+<script type="text/javascript">
+  // source image size
+  let width = 700;
+  let height = 700;
+
+  // triangles count
+  let trianglesWidth = 28;
+  let trianglesHeight = 16;
+
+  // triangle size
+  let triangleWidthOffset = 5;
+  let triangleHeightOffset = 10;
+
+  // find canvas on the page
+  let canvas = document.getElementById('canvas');
+
+  // get canvas content
+  let context = canvas.getContext("2d");
+
+  // create image for canvas
+  let img = new Image();
+
+  // create image load handler
+  let matrix = {};
+  img.onload = function() {
+    // draw image in the canvas
+    canvas.width = width;
+    canvas.height = height;
+    context.drawImage(img, 0, 0);
+
+    // calculate triangle sizes
+    let triangleWidth = width / trianglesWidth;
+    let triangleHeight = height / trianglesHeight;
+
+    // get colors matrix
+    let x, y;
+    let matrix = [];
+    for (y = 0; y < trianglesHeight; y++) {
+      matrix[y] = [];
+      for (x = 0; x <= trianglesWidth; x++) {
+        // calculate py offset
+        let py;
+        if (y % 2 === 0) {
+          if (x % 2 === 0) { // get top part of the triangle
+            py = triangleHeight * y + triangleHeightOffset;
+          } else { // get bottom part of the triangle
+            py = triangleHeight * y + (triangleHeight - triangleHeightOffset);
+          }
+        } else {
+          if (x % 2 === 0) { // get bottom part of the triangle
+            py = triangleHeight * y + (triangleHeight - triangleHeightOffset);
+          } else { // get top part of the triangle
+            py = triangleHeight * y + triangleHeightOffset;
+          }
+        }
+
+        // calculate px offset
+        let px;
+        switch (true) {
+          // first column
+          case x === 0:
+            px = triangleWidthOffset;
+            break;
+
+          // last column
+          case x === trianglesWidth:
+            px = width - triangleWidthOffset;
+            break;
+
+          default:
+            px = triangleWidth * x;
+        }
+
+        // draw red point
+        // context.beginPath();
+        // context.arc(px, py, 2, 0, 2 * Math.PI, false);
+        // context.fillStyle = 'red';
+        // context.fill();
+
+        // get data by coordinates
+        let imageData = context.getImageData(px, py, 1, 1);
+
+        // save data to the matrix
+        matrix[y][x] = imageData.data;
+      }
+    }
+
+    // find output node
+    console.log(matrix);
+    let output = document.getElementById('output');
+    output.value = JSON.stringify(matrix);
+  };
+
+  // set image src path
+  img.src = 'image.jpg';
+</script>
+
+</body>
+</html>

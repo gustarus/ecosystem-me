@@ -1,0 +1,131 @@
+$blockCellPadding = 15px
+$blockLabelSize = 110px
+
+.block
+  width 100%
+  margin-top 40px
+  page-break-inside avoid
+  +mobile()
+    margin-top 30px
+  &_experience
+    page-break-inside auto
+  &__header
+    font-adaptive('content')
+    padding 0
+    margin 0
+    border-bottom 1px solid #c3c3c3
+    font-family $fontFamilyLight
+    font-weight normal
+    text-align left
+    color #777777
+    &_highlight
+      color #f26b63
+      font-weight bold
+      border-bottom-color #f26b63
+  &__row
+    clearfix()
+    font-adaptive('content')
+    margin-top $blockCellPadding
+    color #333
+  &__section
+    margin-top $blockCellPadding* 2
+    &-header
+      font-adaptive('content')
+  &__label
+    font-adaptive('small')
+    width $blockLabelSize
+    float left
+    color #777777
+    strong
+      color #555555
+    +mobile()
+      width auto
+      float none
+  &__content
+    font-adaptive('content')
+    h3
+      font-adaptive('header')
+      margin-top -2px
+      font-weight bold
+    h4
+      font-adaptive('label')
+      font-family $fontFamilyLight
+      font-weight normal
+    h5
+      font-adaptive('small')
+      font-family $fontFamilyLight
+      font-weight normal
+      color #777777
+    p
+      margin-top $blockCellPadding
+      text-align justify
+    ul
+      margin-top $blockCellPadding
+      list-style none
+      &[data-label]:before
+        position relative
+        content attr(data-label)
+        display block
+
+      li
+        padding-left 20px
+        text-align justify
+        &:before
+          display inline-block
+          width 20px
+          margin-left -20px
+          content '—'
+      &.tags
+        padding 0
+        margin 0
+        line-height 0
+        li
+          display inline-block
+          position relative
+          margin-right 4px
+          margin-top 4px
+          padding 1px 5px
+          border-radius 2px
+          background-color #d7d7d7
+          overflow hidden
+          line-height $lineHeight
+          font-adaptive('small')
+          +print()
+            border 1px solid #d7d7d7
+        li[data-value="5"]
+        li[data-value="4"]
+        li[data-value="3"]
+        li[data-value="2"]
+        li[data-value="1"]
+          padding-left 15px
+          +print()
+            padding-left 5px
+          &:before
+            content ''
+            display block
+            width 10px
+            position absolute
+            margin 0
+            top 0
+            left 0
+            height 100%
+            +print()
+              display none
+        li[data-value="5"]:before
+          background-color #66CC66
+        li[data-value="4"]:before
+          background-color #99CC99
+        li[data-value="3"]:before
+          background-color #FFCC33
+        li[data-value="2"]:before
+          background-color #FF6600
+        li[data-value="1"]:before
+          background-color #FF3300
+  &__label + &__content
+    margin-left $blockLabelSize + $blockCellPadding
+    +mobile()
+      margin-left 0
+  &__annotation
+    margin-top 10px
+    h1
+      margin-top 0

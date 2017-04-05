@@ -1,0 +1,84 @@
+.plate
+  position absolute
+  height 90px
+  background rgb(255, 255, 255)
+  font-size 25px
+  margin 0
+  padding 0
+  color $sceneFontColor
+  top 50%
+  transform translateY(-50%)
+  left 1px
+  right 1px
+  box-shadow 0 1px 3px rgba(0, 0, 0, 0.3)
+  border-top-width 1px
+  border-bottom-width 1px
+  text-align center
+  font-family $fontFamilyRegular
+  z-index 100
+  +mobile()
+    height 110px
+  +print()
+    height 150px
+    left 0
+    right 0
+    box-shadow none
+  &_fixed
+    position fixed
+    top 0
+    transform none
+    +print()
+      position absolute
+      top 50%
+      transform translateY(-50%)
+  &:before
+  &:after
+    content ''
+    position absolute
+    height 100%
+    width 1px
+    background $sceneBackground
+    top 0
+    +print()
+      display none
+  &:before
+    left -1px
+  &:after
+    right -1px
+  &__content
+    width 100%
+    position relative
+    top 50%
+    transform translateY(-50%)
+  &__title
+    font-adaptive('label')
+    +print()
+      font-size 22px
+  &__specialization
+    font-weight bold
+    text-transform lowercase
+    +print()
+      font-size 22px
+    +mobile()
+      display block
+  &__description
+    font-adaptive('content')
+    +print()
+      font-size 18px
+    &-part
+      display inline-block
+      vertical-align top
+      +mobile()
+        display block
+        margin-top 4px
+    &-delimiter
+      content '|'
+      display inline-block
+      width 10px
+      text-align center
+      margin-top -1px
+      color rgb(217, 10, 45)
+      vertical-align top
+    +mobile()
+      & > &-delimiter
+        display none

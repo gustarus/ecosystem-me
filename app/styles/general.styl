@@ -1,0 +1,22 @@
+body
+  font-family $fontFamilyRegular
+  font-weight normal
+  font-style normal
+  line-height 1.4
+  color #111111
+  font-adaptive('content')
+  +print()
+    width 680px
+    height 962px
+
+a
+  color #111
+  text-decoration none
+  box-shadow: inset 0 -1px 0 white, inset 0 -2px 0 #111
+  +print()
+    box-shadow none
+  &:hover,
+  &:focus
+    color rgb(217, 10, 45)
+    text-decoration none
+    box-shadow: inset 0 -1px 0 white, inset 0 -2px 0 rgb(217, 10, 45)

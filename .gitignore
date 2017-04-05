@@ -1,0 +1,17 @@
+/deploy.sh
+# ignore idea prduct
+/.idea
+
+# ignore modules
+/node_modules
+
+# ignore build results
+/web/assets/*
+/web/index.html
+
+# ignore local settings
+/config/*.local.js
+
+# other ignores
+npm-debug.log
+.DS_Store

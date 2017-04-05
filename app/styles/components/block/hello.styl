@@ -1,0 +1,19 @@
+.block-hello
+  +mobile()
+    margin-top 5px
+  &__content
+    +mobile()
+      padding-left 0
+      flex none
+    img
+      width 166px
+      float left
+      margin 0 15px 15px 0
+      border-radius 2px
+      +mobile()
+        width 80px
+    p:first-of-type
+      margin-top 0
+      +mobile()
+        margin-top 15px
+

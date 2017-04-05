@@ -1,0 +1,101 @@
+$sceneBackground = #fff
+$sceneFontColor = #222
+$sceneFontColorLight = #999
+
+@keyframes bounce-vertical 
+  0%
+    transform translate(0, 0)
+  45%
+    transform translate(0, 6px)
+  50%
+    transform translate(0, 5.5px)
+  70%
+    transform translate(0, 0.5px)
+  100%
+    transform translate(0, 0)
+
+.scene-main
+  position relative
+  width 100vw
+  height 100vh
+  background $sceneBackground
+  +print()
+    width 680px
+    height 962px
+    // coverage for bottom half of the page
+    &:after
+      content ''
+      display block
+      width 100%
+      height 50%
+      position absolute
+      top 50%
+      left 0
+      background $sceneBackground
+      z-index 90
+  &__triangles
+    position absolute
+    top 0
+    right 0
+    bottom 0
+    left 0
+    overflow hidden
+    z-index 80
+  &__triangle
+    width 0
+    height 0
+    border 0 solid transparent
+    transition opacity .4s
+    opacity 1
+    &_hidden
+      opacity 0
+    &_swapped
+      +print()
+        display none
+    &:not(&_hidden):hover
+      opacity 0.6
+      cursor pointer
+  &__down
+    display inline-block
+    width 0
+    height 0
+    position absolute
+    bottom 30px
+    left 50%
+    margin-left -10px
+    border-left 17px solid transparent
+    border-right 17px solid transparent
+    border-top 15px solid rgba(0, 0, 0, 0.25)
+    animation-duration 2s
+    animation-iteration-count infinite
+    animation-name bounce-vertical
+    animation-timing-function ease-in-out
+    transform-origin center center
+    z-index 90
+    &-appear
+    &-enter
+      bottom 50px
+      opacity 0
+      &-active
+        bottom 30px
+        opacity 1
+        transition bottom 500ms, opacity 500ms ease-in
+    &-leave
+      bottom 30px
+      opacity 1
+      &-active
+        bottom 10px
+        opacity 0
+        transition bottom 500ms, opacity 500ms ease-out
+    &:before
+      border-top 13px solid #fff
+      content ''
+      position absolute
+      top -18px
+      left -14px
+      width 0
+      height 0
+      border-left 14.5px solid transparent
+      border-right 14.5px solid transparent
+
+
