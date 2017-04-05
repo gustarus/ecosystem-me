@@ -1,8 +1,6 @@
 ## <img src="http://webulla.ru/static/logo-60x60.png" width="22px" height="22px" style="vertical-align: middle;" /> My personal page
 Look at this: http://kondratenko.me.
 
-*Sorry, but currently this project is only just for a presentation.*
-
 ### Used components
 In my project I use:
 * [react.js](https://facebook.github.io/react/) - as main technology;
