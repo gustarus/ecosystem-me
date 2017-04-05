@@ -1,5 +1,5 @@
 ## <img src="http://webulla.ru/static/logo-60x60.png" width="22px" height="22px" style="vertical-align: middle;" /> My personal page
-Look at this: (http://kondratenko.me)[http://kondratenko.me].
+Look at this: http://kondratenko.me.
 
 *Sorry, but currently this project is only just for a presentation.*
 
