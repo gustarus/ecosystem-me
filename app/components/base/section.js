@@ -1,5 +1,10 @@
 import {browserHistory} from 'react-router'
 
+/**
+ * This is a global component for all non root routes.
+ * For example: resume, infographic and so on.
+ * This instance allow to use escape for exit to the root route.
+ */
 export default class extends React.Component {
 
   constructor(options) {

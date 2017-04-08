@@ -4,6 +4,7 @@ import Mock from '@components/base/mock'
 // import application pages
 import DefaultsIndexPage from '@core/router/defaults/index'
 import DefaultsResumePage from '@core/router/defaults/resume'
+import DefaultsInfographicPage from '@core/router/defaults/infographic'
 import SpeechesHolyjsPage from '@core/router/speeches/holyjs'
 import SpeechesMoscowjsPage from '@core/router/speeches/moscowjs'
 import SpeechesDatabasePage from '@core/router/speeches/database'
@@ -13,6 +14,7 @@ export default <Router history={browserHistory}>
   <Route path="/" component={DefaultsIndexPage}>
     <IndexRoute component={Mock}/>
     <Route path="resume" component={DefaultsResumePage}/>
+    <Route path="infographic" component={DefaultsInfographicPage}/>
     <Route path="speeches">
       <IndexRedirect to="/"/>
       <Route path="holyjs" component={SpeechesHolyjsPage}/>

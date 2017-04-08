@@ -25,6 +25,10 @@ module.exports = {
 
   me,
 
+  infographic: {
+    src: '//cloud.webulla.ru/me/infographic.png'
+  },
+
   main: {
     plate: me,
 
