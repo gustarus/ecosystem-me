@@ -13,7 +13,8 @@ export default class extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.location.pathname !== '/') {
+    const {location} = nextProps;
+    if (location.pathname !== '/') {
       this.setState({scroll: window.scrollY});
       window.scrollTo(0, 0);
     }

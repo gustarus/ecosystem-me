@@ -1,6 +1,8 @@
 import Scene from '@components/base/scene'
 import Indicator from '@components/interface/indicator'
 import Section from '@components/base/section'
+import Return from '@components/base/return'
+import Svg from '@components/base/svg'
 import config from '@core/config/defaults'
 
 export default class extends React.Component {
@@ -31,14 +33,20 @@ export default class extends React.Component {
   }
 
   render() {
+    const isInteractive = !_.isMobile();
+
     return (
-      <Scene ref={ref => this.scene = ref}
-             data-zoom={this.state.zoom}
-             type="infographic"
-             onMouseMove={this.onMouseMove}
-             onClick={this.onPictureClick}>
-        {this.renderPicture()}
-      </Scene>
+      <Section>
+        <Return position="relative"/>
+
+        <Scene ref={ref => this.scene = ref}
+               data-zoom={this.state.zoom}
+               type="infographic"
+               onMouseMove={isInteractive && this.onMouseMove}
+               onClick={isInteractive && this.onPictureClick}>
+          {this.renderPicture()}
+        </Scene>
+      </Section>
     );
   }
 
@@ -89,6 +97,7 @@ export default class extends React.Component {
 
   onPictureClick(e) {
     if (!this.state.zoom) {
+      window.scrollTo(0, 50);
       const {x, y} = this.calculatePictureOffset(e.clientX, e.clientY);
       this.setState({zoom: true, x, y});
     } else {

@@ -44,18 +44,16 @@ export default class extends React.Component {
               <span className="plate__description-delimiter">|</span>
               <a className="plate__description-item"
                  href={'mailto:' + atob(email)}>{atob(email)}</a>
-              <span className="noprint plate__description-delimiter">|</span>
-              <a className="noprint plate__description-item" href="http://webulla.ru/#portfolio" target="_blank">My products!</a>
             </div>
 
             <span className="noprint plate__description-delimiter">|</span>
 
             <div className="noprint plate__description-part">
-              <a className="plate__description-item" href={linkedin} target="_blank">LinkedIn</a>
-              <span className="plate__description-delimiter">|</span>
-              <a className="plate__description-item" href={twitter} target="_blank">Twitter</a>
-              <span className="plate__description-delimiter">|</span>
+              <Link to="/infographic" className="noprint plate__description-item">Infographic about me</Link>
+              <span className="noprint plate__description-delimiter">|</span>
               <Link to="/resume" className="plate__description-item" title="Back to the main page">Get the resume</Link>
+              <span className="plate__description-delimiter">|</span>
+              <a className="plate__description-item" href={linkedin} target="_blank">LinkedIn</a>
             </div>
 
             <div className="print plate__description-part">{window.location.origin}</div>
