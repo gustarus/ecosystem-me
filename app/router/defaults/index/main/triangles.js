@@ -13,7 +13,7 @@ export default class extends React.Component {
     let matrix = this.props.matrix;
 
     // define layout size
-    let width = window.innerWidth;
+    let width = document.body.clientWidth;
     let height = window.innerHeight;
 
     // define triangle options
