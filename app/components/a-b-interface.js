@@ -38,7 +38,7 @@ export default class extends Base {
       console.info(`[a-b-interface] Using variant '${variant.key}' from section '${section}'.`);
       this.report(section, variant.key, 'use');
       this.used[section] = variant.key;
-      return { variant, hit: () => this.hit(section, variant.key) };
+      return { ...variant, hit: () => this.hit(section, variant.key) };
     }
 
     return null;
