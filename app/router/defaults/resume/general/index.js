@@ -1,10 +1,10 @@
-import Scene from '@components/base/scene'
-import Block from '@components/base/block'
-import Activities from '@components/blocks/activities'
-import HugeHeader from '@components/base/header/huge'
-import MediumHeader from '@components/base/header/medium'
-import SmallHeader from '@components/base/header/small'
-import config from '@core/config/defaults'
+import Scene from '@core/views/scene'
+import Block from '@core/views/block'
+import Activities from '@core/views/blocks/activities'
+import HugeHeader from '@core/views/header/huge'
+import MediumHeader from '@core/views/header/medium'
+import SmallHeader from '@core/views/header/small'
+import config from '@core/config'
 
 export default class extends React.Component {
 

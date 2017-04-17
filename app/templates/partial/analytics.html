@@ -1,0 +1,15 @@
+<script>
+  // Instructs analytics.js to use the name `analytics`.
+  window.GoogleAnalyticsObject = 'analytics';
+
+  // Creates an initial analytics() function.
+  // The queued commands will be executed once analytics.js loads.
+  window.analytics = window.analytics || function() {
+      (analytics.q = analytics.q || []).push(arguments)
+    };
+
+  analytics('create', 'UA-97461765-1', 'auto');
+  analytics('send', 'pageview');
+</script>
+
+<script async src='//www.google-analytics.com/analytics.js'></script>

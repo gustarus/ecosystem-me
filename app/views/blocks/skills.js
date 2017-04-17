@@ -1,4 +1,4 @@
-import Table from '@components/base/table'
+import Table from '@core/views/table'
 
 export default class extends React.Component {
 

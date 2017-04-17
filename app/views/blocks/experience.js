@@ -1,10 +1,10 @@
-import date from '@helpers/date'
-import translate from '@helpers/translate'
-import Block from '@components/base/block'
-import LargeHeader from '@components/base/header/large'
-import MediumHeader from '@components/base/header/medium'
-import SmallHeader from '@components/base/header/small'
-import Html from '@components/base/html'
+import date from '@core/helpers/date'
+import translate from '@core/helpers/translate'
+import Block from '@core/views/block'
+import LargeHeader from '@core/views/header/large'
+import MediumHeader from '@core/views/header/medium'
+import SmallHeader from '@core/views/header/small'
+import Html from '@core/views/html'
 
 export default class extends React.Component {
 

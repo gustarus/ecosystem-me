@@ -1,3 +1,6 @@
+import ABInterface from '@core/components/a-b-interface';
+import Cookies from '@core/components/cookies';
+
 import trianglesData from '@core/data/triangles.json'
 import photo from '@core/images/me.jpg'
 
@@ -10,9 +13,29 @@ const me = {
   twitter: 'https://twitter.com/mrgustarus'
 };
 
-module.exports = {
+export default {
+  me,
 
   root: '#root',
+
+  components: {
+    abinterface: {
+      alias: true,
+      constructor: ABInterface,
+      prefix: 'a-b-interface',
+      tests: {
+        'link-to-the-infographic': {
+          'default': {},
+          'red': {}
+        }
+      }
+    },
+
+    cookies: {
+      alias: true,
+      constructor: Cookies
+    }
+  },
 
   translate: {
     language: 'en',
@@ -22,8 +45,6 @@ module.exports = {
       dateMonth: 'MMMM YYYY'
     }
   },
-
-  me,
 
   infographic: {
     src: '//cloud.webulla.ru/me/infographic.png'
@@ -579,4 +600,4 @@ module.exports = {
       ]
     }
   }
-};
+}

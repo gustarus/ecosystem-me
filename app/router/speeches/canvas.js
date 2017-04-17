@@ -1,5 +1,5 @@
-import config from '@core/config/defaults'
-import Speech from '@components/base/speech'
+import config from '@core/config'
+import Speech from '@core/views/speech'
 
 export default class extends React.Component {
 

@@ -1,13 +1,14 @@
 // import application mixins for lodash
-import '@helpers/mixin'
+import '@core/helpers/mixin'
 
 // import theme styles
 import '@core/styles/application.styl'
 
 // import modules
-import Router from '@core/router'
-import translate from '@helpers/translate'
-import config from '@core/config/defaults'
+import translate from '@core/helpers/translate'
+import router from '@core/router'
+import config from '@core/config'
+import app from '@core/app'
 
 // configure translation module
 translate.configure(config.translate);
@@ -16,5 +17,5 @@ translate.configure(config.translate);
 let root = document.querySelector(config.root);
 root.innerHTML = '';
 
-// render application
-ReactDOM.render(Router, root);
+// render the app
+app.setup().boot().render(router(), root);

@@ -7,7 +7,7 @@ var mixins = require('stylus-mixins');
 var TextPlugin = require('extract-text-webpack-plugin');
 var HtmlPlugin = require('html-webpack-plugin');
 var Svg = require('webpack-svgstore-plugin');
-var config = require(__dirname + '/../app/config/compile.js');
+var variables = require(__dirname + '/../app/config/template');
 
 module.exports = function(rootDir) {
   // assets source dir
@@ -40,10 +40,7 @@ module.exports = function(rootDir) {
     resolve: {
       modulesDirectories: ['node_modules'],
       alias: {
-        '@core': srcAbsoluteDir,
-        '@static': srcAbsoluteDir + '/static',
-        '@helpers': srcAbsoluteDir + '/helpers',
-        '@components': srcAbsoluteDir + '/components'
+        '@core': srcAbsoluteDir
       }
     },
 
@@ -95,11 +92,11 @@ module.exports = function(rootDir) {
 
       // generate index.html
       new HtmlPlugin({
-        url: config.host,
-        title: config.title,
-        description: config.description,
-        image: config.host + config.image,
-        fb: {id: config.fb.id},
+        url: variables.host,
+        title: variables.title,
+        description: variables.description,
+        image: variables.host + variables.image,
+        fb: {id: variables.fb.id},
         chunks: ['application', 'vendors'],
         filename: '../index.html',
         template: './app/templates/index.jade'
