@@ -1,3 +1,6 @@
+import ABInterface from '@core/components/a-b-interface';
+import Cookies from '@core/components/cookies';
+
 import trianglesData from '@core/data/triangles.json'
 import photo from '@core/images/me.jpg'
 
@@ -14,6 +17,25 @@ export default {
   me,
 
   root: '#root',
+
+  components: {
+    abinterface: {
+      alias: true,
+      constructor: ABInterface,
+      prefix: 'a-b-interface',
+      tests: {
+        'link-to-the-infographic': {
+          'default': {},
+          'red': {}
+        }
+      }
+    },
+
+    cookies: {
+      alias: true,
+      constructor: Cookies
+    }
+  },
 
   translate: {
     language: 'en',

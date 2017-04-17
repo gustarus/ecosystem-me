@@ -1,5 +1,6 @@
 import {Link} from 'react-router'
 import config from '@core/config'
+import app from '@core/app';
 
 export default class extends React.Component {
 
@@ -27,7 +28,8 @@ export default class extends React.Component {
   }
 
   render() {
-    const {name, role, city, email, linkedin, twitter} = this.props;
+    const {name, role, city, email, linkedin} = this.props;
+    const test = app.abinterface.use('link-to-the-infographic');
 
     return (
       <div className="plate">
@@ -49,7 +51,11 @@ export default class extends React.Component {
             <span className="noprint plate__description-delimiter">|</span>
 
             <div className="noprint plate__description-part">
-              <Link to="/infographic" className="noprint plate__description-item">Infographic about me</Link>
+              <Link to="/infographic"
+                    className={'noprint plate__description-item abtest-' + test.id}
+                    onClick={test.hit}>
+                Infographic about me
+              </Link>
               <span className="noprint plate__description-delimiter">|</span>
               <Link to="/resume" className="plate__description-item" title="Back to the main page">Get the resume</Link>
               <span className="plate__description-delimiter">|</span>
