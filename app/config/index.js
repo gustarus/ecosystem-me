@@ -10,7 +10,8 @@ const me = {
   twitter: 'https://twitter.com/mrgustarus'
 };
 
-module.exports = {
+export default {
+  me,
 
   root: '#root',
 
@@ -22,8 +23,6 @@ module.exports = {
       dateMonth: 'MMMM YYYY'
     }
   },
-
-  me,
 
   infographic: {
     src: '//cloud.webulla.ru/me/infographic.png'
@@ -579,4 +578,4 @@ module.exports = {
       ]
     }
   }
-};
+}

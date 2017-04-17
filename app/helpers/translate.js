@@ -1,4 +1,4 @@
-import date from '@helpers/date'
+import date from '@core/helpers/date'
 
 let module = {
 

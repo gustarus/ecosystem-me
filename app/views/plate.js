@@ -1,5 +1,5 @@
 import {Link} from 'react-router'
-import config from '@core/config/defaults'
+import config from '@core/config'
 
 export default class extends React.Component {
 

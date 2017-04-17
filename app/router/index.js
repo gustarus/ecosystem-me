@@ -1,5 +1,5 @@
 import {Router, Route, Redirect, IndexRedirect, IndexRoute, browserHistory} from 'react-router'
-import Mock from '@components/base/mock'
+import Mock from '@core/views/mock'
 
 // import application pages
 import DefaultsIndexPage from '@core/router/defaults/index'

@@ -1,4 +1,4 @@
-import Plate from '@components/interface/plate'
+import Plate from '@core/views/plate'
 import Triangles from './triangles'
 import Down from './down'
 

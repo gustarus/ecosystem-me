@@ -1,7 +1,7 @@
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
-import config from '@core/config/defaults'
-import Theater from '@components/base/theater'
-import Facade from '@components/base/facade'
+import config from '@core/config'
+import Theater from '@core/views/theater'
+import Facade from '@core/views/facade'
 import Main from './main'
 import Hello from './hello'
 

@@ -1,4 +1,4 @@
-import translate from '@helpers/translate';
+import translate from '@core/helpers/translate';
 
 export default {
 
