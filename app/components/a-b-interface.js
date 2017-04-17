@@ -4,7 +4,7 @@ export default class extends Base {
 
   variants = {};
   used = {};
-  hited = {};
+  hitted = {};
 
   boot() {
     const app = this.app;
@@ -53,13 +53,13 @@ export default class extends Base {
       key = this.used[section];
     }
 
-    if (!force && this.hited[section] === key) {
+    if (!force && this.hitted[section] === key) {
       return this;
     }
 
     console.info(`[a-b-interface] Hitting variant '${key}' from section '${section}'.`);
     this.report(section, key, 'hit');
-    this.hited[section] = key;
+    this.hitted[section] = key;
     return this;
   }
 
