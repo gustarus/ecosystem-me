@@ -12,6 +12,7 @@ export default class extends Base {
     Object.keys(tests).forEach(section => {
       const variants = tests[section];
 
+      // get a a/b test variant key
       const cookie = `${prefix}:${section}`;
       let key = app.cookies.get(cookie);
       if (!variants[key]) {
@@ -20,8 +21,10 @@ export default class extends Base {
         app.cookies.set(cookie, key);
       }
 
+      // add a variant in the collection
+      const id = `${section}-${key}`;
       const params = variants[key];
-      this.variants[section] = { id: `${section}-${key}`, section, key, params };
+      this.variants[section] = { id, section, key, params };
     });
   }
 
