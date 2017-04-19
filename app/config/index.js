@@ -322,6 +322,14 @@ export default {
 
       links: [
         {
+          title: 'My portfolio',
+          url: 'http://kondratenko.me'
+        },
+        {
+          title: 'Infographic about me',
+          url: 'http://kondratenko.me/infographic'
+        },
+        {
           title: 'LinkedIn',
           url: me.linkedin
         },
