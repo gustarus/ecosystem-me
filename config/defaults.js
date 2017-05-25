@@ -64,6 +64,10 @@ module.exports = function(rootDir) {
       use: [rupture(), mixins()]
     },
 
+    node: {
+      fs: "empty"
+    },
+
     // plugins configurations
     plugins: [
       // vendors entry point
