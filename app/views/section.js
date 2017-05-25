@@ -32,9 +32,9 @@ export default class extends React.Component {
     e = e || window.event;
     let isEscape;
     if ('key' in e) {
-      isEscape = e.key == 'Escape';
+      isEscape = e.key === 'Escape';
     } else {
-      isEscape = e.keyCode == 27;
+      isEscape = e.keyCode === 27;
     }
 
     if (isEscape) {
