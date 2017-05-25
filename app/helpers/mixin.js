@@ -3,7 +3,6 @@ _.mixin({
     switch (name) {
       case 'chrome':
         return /chrom(e|ium)/.test(navigator.userAgent.toLowerCase());
-        break;
       default:
         throw new Error('Can\'t check browser compatibility');
     }
@@ -13,10 +12,8 @@ _.mixin({
     switch (name) {
       case 'osx':
         return /macintosh/i.test(navigator.userAgent) && !window.MSStream;
-        break;
       case 'ios':
         return /iphone|ipod|ipad/i.test(navigator.userAgent) && !window.MSStream;
-        break;
       default:
         throw new Error('Can\'t check os compatibility');
     }

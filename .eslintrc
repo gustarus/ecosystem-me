@@ -1,0 +1,15 @@
+{
+  "extends": "./node_modules/eslint-config-rambler/.eslintrc",
+  "rules": {
+    "prefer-const": 0,
+    "block-on-top": 0,
+    "object-curly-spacing": ["error", "never"],
+    "new-cap": ["error", { "capIsNew": false }],
+    "import/namespace": [2, { "allowComputed": true }],
+    "react/no-unknown-property": 0,
+    "react/prop-types": 0,
+    "react/jsx-max-props-per-line": 0,
+    "no-return-assign": 0,
+    "react/no-danger": 0
+  }
+}

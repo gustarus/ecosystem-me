@@ -1,6 +1,6 @@
-import date from '@core/helpers/date'
+import date from '@core/helpers/date';
 
-let module = {
+export default {
 
   configure(options) {
     this.language = options.language;
@@ -8,7 +8,7 @@ let module = {
     this.messages = options.messages;
   },
 
-  translate (category, message) {
+  translate(category, message) {
     return _.get(this.messages, [this.language, category, message], message);
   },
 
@@ -21,12 +21,12 @@ let module = {
   },
 
   asPeriod(from, till) {
-    let period = date.period(from, till);
-    let diff = moment.duration(period.months, 'months');
+    const period = date.period(from, till);
+    const diff = moment.duration(period.months, 'months');
 
-    let _from = period.begin.format(this.format.dateMonth);
-    let _till = till ? period.end.format(this.format.dateMonth) : 'till now';
-    let _duration = this.asDuration(diff);
+    const _from = period.begin.format(this.format.dateMonth);
+    const _till = till ? period.end.format(this.format.dateMonth) : 'till now';
+    const _duration = this.asDuration(diff);
 
     return `${_from}${_till ? ' - ' + _till : ''}${_duration ? ', ' + _duration : ''}`;
   },
@@ -39,7 +39,7 @@ let module = {
     }
 
     if (duration.months()) {
-      text += (text ? ' ' : '' ) + duration.months() + ' ' + this.asMonths(duration.months());
+      text += (text ? ' ' : '') + duration.months() + ' ' + this.asMonths(duration.months());
     }
 
     return text;
@@ -49,7 +49,3 @@ let module = {
     return moment(inDate, this.format.date).format(this.format.dateDay);
   }
 };
-
-module.t = module.translate;
-
-export default module;

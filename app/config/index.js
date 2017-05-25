@@ -1,8 +1,8 @@
 import ABInterface from '@core/components/a-b-interface';
 import Cookies from '@core/components/cookies';
 
-import trianglesData from '@core/data/triangles.json'
-import photo from '@core/images/me.jpg'
+import trianglesData from '@core/data/triangles.json';
+import photo from '@core/images/me.jpg';
 
 const me = {
   name: 'Kondratenko Pavel',
@@ -396,7 +396,7 @@ export default {
       date: '05.06.2017',
       title: 'Where the react native ends',
       description: '<a href="http://frontendconf.ru/" target="_blank">Frontend Conf</a>, Moscow, Skolkovo Innovation Center',
-      summary: `Hey!`,
+      summary: 'Hey!',
 
       links: [
         {
@@ -628,4 +628,4 @@ export default {
       ]
     }
   }
-}
+};

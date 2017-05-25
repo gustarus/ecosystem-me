@@ -11,6 +11,18 @@ module.exports = function(rootDir) {
     devServer: {
       contentBase: rootDir + '/app',
       historyApiFallback: true
+    },
+    module: {
+      preLoaders: [
+        {
+          test: /\.js$/,
+          loader: 'eslint-loader',
+          exclude: [/node_modules/]
+        }
+      ]
+    },
+    eslint: {
+      configFile: '.eslintrc'
     }
   }
 };

@@ -1,5 +1,5 @@
-import {Link} from 'react-router'
-import Svg from '@core/views/svg'
+import {Link} from 'react-router';
+import Svg from '@core/views/svg';
 
 export default class extends React.Component {
 
@@ -12,8 +12,8 @@ export default class extends React.Component {
     const {theme, position} = this.props;
 
     return (
-      <Link to="/" className="return" title="Back to the main page" data-theme={theme} style={{position}}>
-        <Svg id="house" viewBox="0 0 79 73" className="return__house"/>
+      <Link to='/' className='return' title='Back to the main page' data-theme={theme} style={{position}}>
+        <Svg id='house' viewBox='0 0 79 73' className='return__house'/>
       </Link>
     );
   }

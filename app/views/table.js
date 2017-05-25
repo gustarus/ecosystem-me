@@ -8,13 +8,15 @@ export default class extends React.Component {
 
     let content;
     if (this.props.children) {
-      content = <div className="block__content">{this.props.children}</div>;
+      content = <div className='block__content'>{this.props.children}</div>;
     }
 
-    return <div className={'block' + (this.props.className ? ' ' + this.props.className : '')}>
-      {title}
-      {content}
-    </div>;
+    return (
+      <div className={'block' + (this.props.className ? ' ' + this.props.className : '')}>
+        {title}
+        {content}
+      </div>
+    );
   }
 }
 

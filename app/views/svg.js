@@ -11,7 +11,7 @@ export default class extends React.Component {
   }
 
   render() {
-    let icon = {__html: '<use xlink:href="#' + this.props.id + '"></use>'};
-    return (<svg className={this.props.className} viewBox={this.props.viewBox} dangerouslySetInnerHTML={icon} style={this.props.style}/>);
+    const icon = {__html: '<use xlink:href="#' + this.props.id + '"></use>'};
+    return <svg className={this.props.className} viewBox={this.props.viewBox} dangerouslySetInnerHTML={icon} style={this.props.style}/>;
   }
 }
