@@ -1,0 +1,2 @@
+# Ignore camelCase models
+app/_js/pages/topic/models/*

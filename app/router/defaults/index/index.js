@@ -9,13 +9,13 @@ export default class extends React.Component {
 
   constructor(options) {
     super(options);
-    this.state = {scroll: 0};
+    this.state = { scroll: 0 };
   }
 
   componentWillReceiveProps(nextProps) {
     const {location} = nextProps;
     if (location.pathname !== '/') {
-      this.setState({scroll: window.scrollY});
+      this.setState({ scroll: window.scrollY });
       window.scrollTo(0, 0);
     }
   }
@@ -38,7 +38,7 @@ export default class extends React.Component {
       </Facade>
 
       <ReactCSSTransitionGroup transitionName="transition-section" transitionEnterTimeout={300} transitionLeaveTimeout={300}>
-        {React.cloneElement(this.props.children, {key: segment})}
+        {React.cloneElement(this.props.children, { key: segment })}
       </ReactCSSTransitionGroup>
     </Theater>;
   }

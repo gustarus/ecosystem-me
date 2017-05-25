@@ -4,7 +4,7 @@ export default class extends React.Component {
 
   constructor(options) {
     super(options);
-    this.state = {visible: true};
+    this.state = { visible: true };
     this.onWindowChangeDebounced = _.debounce(this.onWindowChange.bind(this), 200);
   }
 

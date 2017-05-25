@@ -7,6 +7,7 @@
     "start": "NODE_ENV=development webpack-dev-server --progress --host 0.0.0.0 --port 8080",
     "build": "rm -rf web/assets/* && NODE_ENV=production webpack --progress -p --colors",
     "build:fast": "rm -rf web/assets/* && NODE_ENV=production webpack",
+    "lint": "node ./node_modules/.bin/eslint ./app/**",
     "deploy": "sh deploy.sh"
   },
   "author": "Pavel Kondratenko",
@@ -48,6 +49,10 @@
     "webpack-svgstore-plugin": "2.1.2"
   },
   "dependencies": {
+    "eslint": "3.19.0",
+    "eslint-config-rambler": "0.3.0",
+    "eslint-loader": "1.7.1",
+    "eslint-plugin-react": "7.0.1",
     "lodash": "4.5.0",
     "moment": "2.14.1",
     "react": "15.3.0",
