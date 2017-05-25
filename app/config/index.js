@@ -100,7 +100,7 @@ export default {
               <li>We've launched the isomorphic app <a href="https://autorambler.ru/" target="_blank">https://autorambler.ru</a> on the <a href="https://www.npmjs.com/package/rship" target="_blank">rship</a> with react.js and server side rendering.</li>
               <li>We've launched the react administrative panel for all media projects in Rambler&Co.</li>
             </ul>
-            <p><small>Used skills: react, react-native, sails.js, express.js, node.js, sketch, server side rendering, isomorphic app, team leading, team motivation, organization of meetups.</small></p>`
+            <p><small>Used skills: react, react-native, sails.js, mongo db, express.js, node.js, sketch, server side rendering, isomorphic app, team leading, team motivation, organization of meetups.</small></p>`
         },
         {
           period: ['01.07.2016', '31.01.2017'],
