@@ -9,7 +9,7 @@ export default class extends React.Component {
 
   constructor(options) {
     super(options);
-    this.state = { src: null, zoom: false, x: null, y: null };
+    this.state = {src: null, zoom: false, x: null, y: null};
     this.onMouseMove = this.onMouseMove.bind(this);
     this.onPictureClick = this.onPictureClick.bind(this);
   }
@@ -17,7 +17,7 @@ export default class extends React.Component {
   componentDidMount() {
     const {src} = config.infographic;
     this.preloadImage(src).then(() => {
-      this.setState({ src });
+      this.setState({src});
     });
   }
 
@@ -53,7 +53,7 @@ export default class extends React.Component {
   renderPicture() {
     const {src, zoom, x, y} = this.state;
     const scale = zoom ? 2 : 1;
-    const style = { transform: `scale(${scale})`, marginLeft: x, marginTop: y };
+    const style = {transform: `scale(${scale})`, marginLeft: x, marginTop: y};
 
     if (!this.state.src) {
       return <Indicator/>;
@@ -77,7 +77,7 @@ export default class extends React.Component {
     const x = centerX - cursorX;
     const y = centerY - cursorY;
 
-    return { x, y };
+    return {x, y};
   }
 
   setPictureOffset(left, top) {
@@ -99,9 +99,9 @@ export default class extends React.Component {
     if (!this.state.zoom) {
       window.scrollTo(0, 50);
       const {x, y} = this.calculatePictureOffset(e.clientX, e.clientY);
-      this.setState({ zoom: true, x, y });
+      this.setState({zoom: true, x, y});
     } else {
-      this.setState({ zoom: false, x: null, y: null });
+      this.setState({zoom: false, x: null, y: null});
     }
   }
 }

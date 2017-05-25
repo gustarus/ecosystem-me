@@ -24,7 +24,7 @@ export default class extends Base {
       // add a variant in the collection
       const id = `${section}-${key}`;
       const params = variants[key];
-      this.variants[section] = { id, section, key, params };
+      this.variants[section] = {id, section, key, params};
     });
   }
 
@@ -38,7 +38,7 @@ export default class extends Base {
       console.info(`[a-b-interface] Using variant '${variant.key}' from section '${section}'.`);
       this.report(section, variant.key, 'use');
       this.used[section] = variant.key;
-      return { ...variant, hit: () => this.hit(section, variant.key) };
+      return {...variant, hit: () => this.hit(section, variant.key)};
     }
 
     return null;

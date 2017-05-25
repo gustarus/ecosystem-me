@@ -10,6 +10,6 @@ export default {
     // calculate months diff
     const months = end.add(1, 'd').diff(begin, 'months');
 
-    return { begin, end, months };
+    return {begin, end, months};
   }
 }
