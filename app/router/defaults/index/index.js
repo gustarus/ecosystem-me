@@ -1,9 +1,9 @@
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
-import config from '@core/config'
-import Theater from '@core/views/theater'
-import Facade from '@core/views/facade'
-import Main from './main'
-import Hello from './hello'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import config from '@core/config';
+import Theater from '@core/views/theater';
+import Facade from '@core/views/facade';
+import Main from './main';
+import Hello from './hello';
 
 export default class extends React.Component {
 

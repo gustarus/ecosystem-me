@@ -1,7 +1,7 @@
-import Scene from '@core/views/scene'
-import Block from '@core/views/block'
-import Activities from '@core/views/blocks/activities'
-import Links from '@core/views/blocks/links'
+import Scene from '@core/views/scene';
+import Block from '@core/views/block';
+import Activities from '@core/views/blocks/activities';
+import Links from '@core/views/blocks/links';
 
 export default class extends React.Component {
 

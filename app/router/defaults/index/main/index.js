@@ -1,6 +1,6 @@
-import Plate from '@core/views/plate'
-import Triangles from './triangles'
-import Down from './down'
+import Plate from '@core/views/plate';
+import Triangles from './triangles';
+import Down from './down';
 
 export default class extends React.Component {
 

@@ -1,8 +1,8 @@
 import ABInterface from '@core/components/a-b-interface';
 import Cookies from '@core/components/cookies';
 
-import trianglesData from '@core/data/triangles.json'
-import photo from '@core/images/me.jpg'
+import trianglesData from '@core/data/triangles.json';
+import photo from '@core/images/me.jpg';
 
 const me = {
   name: 'Kondratenko Pavel',

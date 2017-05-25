@@ -1,14 +1,14 @@
-import Scene from '@core/views/scene'
-import Block from '@core/views/block'
-import Table from '@core/views/table'
-import Education from '@core/views/blocks/education'
-import Experience from '@core/views/blocks/experience'
-import Links from '@core/views/blocks/links'
-import Activities from '@core/views/blocks/activities'
-import Skills from '@core/views/blocks/skills'
-import LargeHeader from '@core/views/header/large'
-import MediumHeader from '@core/views/header/medium'
-import SmallHeader from '@core/views/header/small'
+import Scene from '@core/views/scene';
+import Block from '@core/views/block';
+import Table from '@core/views/table';
+import Education from '@core/views/blocks/education';
+import Experience from '@core/views/blocks/experience';
+import Links from '@core/views/blocks/links';
+import Activities from '@core/views/blocks/activities';
+import Skills from '@core/views/blocks/skills';
+import LargeHeader from '@core/views/header/large';
+import MediumHeader from '@core/views/header/medium';
+import SmallHeader from '@core/views/header/small';
 
 export default class extends React.Component {
 

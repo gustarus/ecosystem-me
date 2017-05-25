@@ -1,5 +1,5 @@
-import {Link} from 'react-router'
-import Svg from '@core/views/svg'
+import {Link} from 'react-router';
+import Svg from '@core/views/svg';
 
 export default class extends React.Component {
 

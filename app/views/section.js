@@ -1,4 +1,4 @@
-import {browserHistory} from 'react-router'
+import {browserHistory} from 'react-router';
 
 /**
  * This is a global component for all non root routes.

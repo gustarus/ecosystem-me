@@ -3,7 +3,6 @@
   "rules": {
     "prefer-const": 0,
     "block-on-top": 0,
-    "object-curly-spacing": ["error", "never"],
     "new-cap": ["error", { "capIsNew": false }],
     "import/namespace": [2, { "allowComputed": true }]
   }

@@ -1,15 +1,15 @@
-import Scene from '@core/views/scene'
-import Block from '@core/views/block'
-import Svg from '@core/views/svg'
-import Links from '@core/views/blocks/links'
-import Section from '@core/views/section'
-import HugeHeader from '@core/views/header/huge'
-import MediumHeader from '@core/views/header/medium'
-import SmallHeader from '@core/views/header/small'
-import Html from '@core/views/html'
-import Return from '@core/views/return'
-import translate from '@core/helpers/translate'
-import socials from '@core/helpers/socials'
+import Scene from '@core/views/scene';
+import Block from '@core/views/block';
+import Svg from '@core/views/svg';
+import Links from '@core/views/blocks/links';
+import Section from '@core/views/section';
+import HugeHeader from '@core/views/header/huge';
+import MediumHeader from '@core/views/header/medium';
+import SmallHeader from '@core/views/header/small';
+import Html from '@core/views/html';
+import Return from '@core/views/return';
+import translate from '@core/helpers/translate';
+import socials from '@core/helpers/socials';
 
 export default class extends React.Component {
 

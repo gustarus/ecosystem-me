@@ -1,14 +1,14 @@
 // import application mixins for lodash
-import '@core/helpers/mixin'
+import '@core/helpers/mixin';
 
 // import theme styles
-import '@core/styles/application.styl'
+import '@core/styles/application.styl';
 
 // import modules
-import translate from '@core/helpers/translate'
-import router from '@core/router'
-import config from '@core/config'
-import app from '@core/app'
+import translate from '@core/helpers/translate';
+import router from '@core/router';
+import config from '@core/config';
+import app from '@core/app';
 
 // configure translation module
 translate.configure(config.translate);

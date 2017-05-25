@@ -1,5 +1,5 @@
-import {Link} from 'react-router'
-import config from '@core/config'
+import {Link} from 'react-router';
+import config from '@core/config';
 import app from '@core/app';
 
 export default class extends React.Component {

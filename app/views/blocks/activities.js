@@ -1,7 +1,7 @@
-import Table from '@core/views/table'
-import LargeHeader from '@core/views/header/large'
-import SmallHeader from '@core/views/header/small'
-import translate from '@core/helpers/translate'
+import Table from '@core/views/table';
+import LargeHeader from '@core/views/header/large';
+import SmallHeader from '@core/views/header/small';
+import translate from '@core/helpers/translate';
 
 export default class extends React.Component {
 
