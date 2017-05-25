@@ -10,7 +10,7 @@ export default class extends React.Component {
       return null;
     }
 
-    let rows = this.props.items.map((item, index) => {
+    const rows = this.props.items.map((item, index) => {
       let date;
       if (item.date instanceof Array) {
         date = translate.asPeriod(item.date[0], item.date[1]).toString();

@@ -21,12 +21,12 @@ let module = {
   },
 
   asPeriod(from, till) {
-    let period = date.period(from, till);
-    let diff = moment.duration(period.months, 'months');
+    const period = date.period(from, till);
+    const diff = moment.duration(period.months, 'months');
 
-    let _from = period.begin.format(this.format.dateMonth);
-    let _till = till ? period.end.format(this.format.dateMonth) : 'till now';
-    let _duration = this.asDuration(diff);
+    const _from = period.begin.format(this.format.dateMonth);
+    const _till = till ? period.end.format(this.format.dateMonth) : 'till now';
+    const _duration = this.asDuration(diff);
 
     return `${_from}${_till ? ' - ' + _till : ''}${_duration ? ', ' + _duration : ''}`;
   },

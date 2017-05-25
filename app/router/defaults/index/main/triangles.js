@@ -13,29 +13,29 @@ export default class extends React.Component {
     let matrix = this.props.matrix;
 
     // define layout size
-    let width = document.body.clientWidth;
-    let height = window.innerHeight;
+    const width = document.body.clientWidth;
+    const height = window.innerHeight;
 
     // define triangle options
-    let triangleWidth = this.props.item.width;
-    let triangleHeight = this.props.item.height;
-    let triangleOffset = this.props.item.offset;
-    let triangleOffsetHalf = triangleOffset / 2;
+    const triangleWidth = this.props.item.width;
+    const triangleHeight = this.props.item.height;
+    const triangleOffset = this.props.item.offset;
+    const triangleOffsetHalf = triangleOffset / 2;
 
     // define mash options
-    let mashMax = this.props.mash.max;
-    let mashOffset = this.props.mash.offset;
+    const mashMax = this.props.mash.max;
+    const mashOffset = this.props.mash.offset;
 
-    let triangleHeightOuter = triangleHeight + triangleOffsetHalf;
-    let triangleWidthOuter = triangleWidth + triangleOffset;
+    const triangleHeightOuter = triangleHeight + triangleOffsetHalf;
+    const triangleWidthOuter = triangleWidth + triangleOffset;
 
     // calculate triangles count
-    let countVertical = matrix.length;
-    let countHorizontal = matrix[0].length;
-    let countK = countVertical / countHorizontal;
+    const countVertical = matrix.length;
+    const countHorizontal = matrix[0].length;
+    const countK = countVertical / countHorizontal;
 
     // check if too large for two corners
-    let isTwoCorners = width > triangleWidthOuter * countHorizontal && height > triangleHeightOuter * countVertical;
+    const isTwoCorners = width > triangleWidthOuter * countHorizontal && height > triangleHeightOuter * countVertical;
 
     // create triangles collection
     let triangles = [];
@@ -45,13 +45,13 @@ export default class extends React.Component {
         x = parseInt(x);
 
         // check triangle direction
-        let isUp = (y % 2 === 0 && x % 2 === 0) || (y % 2 !== 0 && x % 2 !== 0);
+        const isUp = (y % 2 === 0 && x % 2 === 0) || (y % 2 !== 0 && x % 2 !== 0);
 
         // define triangle style
         let style = {};
 
         // get border property
-        let borderProperty = isUp ? 'borderBottom' : 'borderTop';
+        const borderProperty = isUp ? 'borderBottom' : 'borderTop';
 
         // set triangle size
         style.borderLeftWidth = triangleWidth / 2 + 'px';
@@ -59,7 +59,7 @@ export default class extends React.Component {
         style[borderProperty + 'Width'] = triangleHeight + 'px';
 
         // set triangle color
-        let color = matrix[y][x];
+        const color = matrix[y][x];
         style[borderProperty + 'Color'] = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
 
         // calculate triangle position
@@ -67,9 +67,9 @@ export default class extends React.Component {
         let px = triangleWidthOuter * x / 2 - triangleWidth / 2;
 
         // apply offset for the triangle if needed
-        let yOffset = _.random(0, mashMax) - mashOffset;
-        let yThreshold = countVertical - x * countK;
-        let isRightCorner = y + yOffset > yThreshold;
+        const yOffset = _.random(0, mashMax) - mashOffset;
+        const yThreshold = countVertical - x * countK;
+        const isRightCorner = y + yOffset > yThreshold;
         if (isRightCorner) {
           // layout height - triangles offset + y coordinate
           py = height - countVertical * triangleHeightOuter - triangleOffsetHalf + py;
@@ -86,15 +86,15 @@ export default class extends React.Component {
           style.left = px + 'px';
 
           // create triangle object
-          let className = 'scene-main__triangle' + (isRightCorner ? ' scene-main__triangle_swapped' : '');
-          let triangle = <div key={y + '-' + x} className={className} style={style}></div>;
+          const className = 'scene-main__triangle' + (isRightCorner ? ' scene-main__triangle_swapped' : '');
+          const triangle = <div key={y + '-' + x} className={className} style={style}></div>;
           triangles.push(triangle);
         }
       });
     });
 
     // define container style
-    let offset = {
+    const offset = {
       top: triangleOffsetHalf + 'px',
       right: triangleOffsetHalf + 'px',
       bottom: triangleOffsetHalf + 'px',
@@ -136,7 +136,7 @@ export default class extends React.Component {
 
       // initialize interval animation
       this.interval = setInterval(() => {
-        let i = _.random(0, this.triangles.length);
+        const i = _.random(0, this.triangles.length);
         this.animateTriangle(this.triangles[i]);
       }, this.props.animation.showFor);
     }

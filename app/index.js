@@ -14,7 +14,7 @@ import app from '@core/app'
 translate.configure(config.translate);
 
 // search and clean root node
-let root = document.querySelector(config.root);
+const root = document.querySelector(config.root);
 root.innerHTML = '';
 
 // render the app

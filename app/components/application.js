@@ -43,8 +43,8 @@ export default class extends Base {
   }
 
   registerComponent(name, options) {
-    let alias = options.alias;
-    let Component = options.constructor;
+    const alias = options.alias;
+    const Component = options.constructor;
     delete options.alias;
     delete options.constructor;
     this.components[name] = new Component(options);
@@ -60,7 +60,7 @@ export default class extends Base {
   }
 
   registerModule(name, options) {
-    let Module = options.constructor;
+    const Module = options.constructor;
     delete options.constructor;
     this.modules[name] = new Module(options);
     this.modules[name].app = this;

@@ -3,15 +3,15 @@ import Table from '@core/views/table'
 export default class extends React.Component {
 
   render() {
-    let tags = _.map(this.props.tags, (item, index) => {
+    const tags = _.map(this.props.tags, (item, index) => {
       return <li key={index} data-value={item}>{index}</li>
     });
 
-    let languages = _.map(this.props.languages, (item, index) => {
+    const languages = _.map(this.props.languages, (item, index) => {
       return <span key={index}>{index} - {item}<br/></span>;
     });
 
-    let rows = [
+    const rows = [
       <div className="block__row" key="1">
         <div className="block__label">Skills</div>
         <div className="block__content">

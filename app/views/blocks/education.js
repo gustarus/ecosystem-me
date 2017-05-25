@@ -6,7 +6,7 @@ import SmallHeader from '@core/views/header/small'
 export default class extends React.Component {
 
   render() {
-    let rows = this.props.items.map((item, index) => {
+    const rows = this.props.items.map((item, index) => {
       return <div className="block__row" key={index}>
         <div className="block__label">{item.label}</div>
         <div className="block__content">

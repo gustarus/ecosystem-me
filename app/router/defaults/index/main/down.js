@@ -39,7 +39,7 @@ export default class extends React.Component {
   }
 
   render() {
-    let component = this.state.visible ? <div className="scene-main__down"></div> : null;
+    const component = this.state.visible ? <div className="scene-main__down"></div> : null;
     return <ReactCSSTransitionGroup transitionName="scene-main__down"
                                     transitionAppear={true}
                                     transitionAppearTimeout={500}
