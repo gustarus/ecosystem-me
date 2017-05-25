@@ -82,7 +82,7 @@ export default {
     defaults: {
       summary: `
         <img src="${photo}"/>
-        <p><strong>Hello! My name is Pavel, 25 years old. Currently I'm a head of frontend development group at <a href="https://rambler-co.ru/en" target="_blank">Rambler&amp;Co</a> and I love to create useful products.</strong></p>
+        <p><strong>Hello! My name is Pavel, 25 years old. Currently I'm a head of frontend development group at <a href="https://rambler-co.ru/en" target="_blank">Rambler&amp;Co</a> and I love to create useful products and services for people.</strong></p>
         <p>I have many years of development experience – software, games, web sites, crm systems and etc. Also, I have extensive knowledge about all development processes: preparation of technical specifications, drawing illustrations, development of databases architecture, implementation of rest api and many others.</p>`,
 
       experience: [
@@ -96,10 +96,11 @@ export default {
             Also I'm in charge of js code and architecture building.
             Currently there are 9 good frontend developers (seniors, middles and junior) in my team.</p>
             <ul data-label="General results">
-              <li>We've launched Rambler/Library ecosystem: <strong>react-native</strong> for mobile application (android & ios) and sails.js as backend (the application is fully developed by me).</li>
+              <li>I've launched Rambler/Library ecosystem: <strong>react-native</strong> for mobile application (android & ios) and sails.js as backend (the application is fully developed by me).</li>
               <li>We've launched the isomorphic app <a href="https://autorambler.ru/" target="_blank">https://autorambler.ru</a> on the <a href="https://www.npmjs.com/package/rship" target="_blank">rship</a> with react.js and server side rendering.</li>
-              <li>We've launched the isomorphic app <a href="https://www.passion.ru/" target="_blank">https://www.passion.ru</a> on the <a href="https://www.npmjs.com/package/rship" target="_blank">rship</a> with react.js and server side rendering.</li>
-            </ul>`
+              <li>We've launched the react administrative panel for all media projects in Rambler&Co.</li>
+            </ul>
+            <p><small>Used skills: react, react-native, sails.js, express.js, node.js, sketch, server side rendering, isomorphic app, team leading, team motivation, organization of meetups.</small></p>`
         },
         {
           period: ['01.07.2016', '31.01.2017'],
@@ -119,7 +120,8 @@ export default {
               <li>I replaced png sprite with svg sprite on the <a href="https://lenta.ru" target="_blank">https://lenta.ru</a> project. It was in the context of the interface improving.</li>
               <li>I implemented jsdoc in our project for more developer friendly code.</li>
               <li>I've completed English language (Intermediate level) course and I need practice ;).</li>
-            </ul>`
+            </ul>
+            <p><small>Used skills: es6, ruby on rails, regression testing, juniors leading, organization of meetups.</small></p>`
         }, {
           period: ['01.09.2015', '30.06.2016'],
           company: 'Rambler&Co',
