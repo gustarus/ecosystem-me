@@ -18,17 +18,21 @@ export default class extends React.Component {
         content = <div className='block__content'>{this.props.children}</div>;
       }
 
-      row = <div className='block__row'>
-        {label}
-        {content}
-      </div>;
+      row = (
+        <div className='block__row'>
+          {label}
+          {content}
+        </div>
+      );
     }
 
 
-    return <div className={'block' + (this.props.className ? ' ' + this.props.className : '')}>
-      {title}
-      {row}
-    </div>;
+    return (
+      <div className={'block' + (this.props.className ? ' ' + this.props.className : '')}>
+        {title}
+        {row}
+      </div>
+    );
   }
 }
 

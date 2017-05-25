@@ -1,6 +1,6 @@
 import date from '@core/helpers/date';
 
-let module = {
+export default {
 
   configure(options) {
     this.language = options.language;
@@ -8,7 +8,7 @@ let module = {
     this.messages = options.messages;
   },
 
-  translate (category, message) {
+  translate(category, message) {
     return _.get(this.messages, [this.language, category, message], message);
   },
 
@@ -39,7 +39,7 @@ let module = {
     }
 
     if (duration.months()) {
-      text += (text ? ' ' : '' ) + duration.months() + ' ' + this.asMonths(duration.months());
+      text += (text ? ' ' : '') + duration.months() + ' ' + this.asMonths(duration.months());
     }
 
     return text;
@@ -49,7 +49,3 @@ let module = {
     return moment(inDate, this.format.date).format(this.format.dateDay);
   }
 };
-
-module.t = module.translate;
-
-export default module;

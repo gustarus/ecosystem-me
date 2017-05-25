@@ -15,4 +15,4 @@ export default class {
 
     return this;
   }
-};
+}

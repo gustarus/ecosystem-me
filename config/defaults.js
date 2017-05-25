@@ -65,7 +65,7 @@ module.exports = function(rootDir) {
     },
 
     node: {
-      fs: "empty"
+      fs: 'empty'
     },
 
     // plugins configurations

@@ -35,7 +35,7 @@ export default class extends Base {
     }
 
     if (variant) {
-      console.info(`[a-b-interface] Using variant '${variant.key}' from section '${section}'.`);
+      console.info(`[a-b-interface] Using variant '${variant.key}' from section '${section}'.`); // eslint-disable-line
       this.report(section, variant.key, 'use');
       this.used[section] = variant.key;
       return {...variant, hit: () => this.hit(section, variant.key)};
@@ -44,7 +44,8 @@ export default class extends Base {
     return null;
   }
 
-  hit(section, key = null, force = false) {
+  hit(section, sectionKey = null, force = false) {
+    let key = sectionKey;
     if (!key) {
       if (!this.used[section]) {
         throw new Error(`Unable to find used variant via section '${section}. Please, pass variant key which u want to hit.`);
@@ -57,7 +58,7 @@ export default class extends Base {
       return this;
     }
 
-    console.info(`[a-b-interface] Hitting variant '${key}' from section '${section}'.`);
+    console.info(`[a-b-interface] Hitting variant '${key}' from section '${section}'.`); // eslint-disable-line
     this.report(section, key, 'hit');
     this.hitted[section] = key;
     return this;
@@ -77,4 +78,4 @@ export default class extends Base {
     analytics('send', 'event', 'ab-test', action, `${section}:${key}`);
     return this;
   }
-};
+}

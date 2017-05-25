@@ -1,4 +1,4 @@
-import {each, merge} from 'lodash';
+import {each} from 'lodash';
 import Base from './base';
 
 /**
@@ -71,6 +71,6 @@ export default class extends Base {
   }
 
   trace(message, type = 'log') {
-    console[type](`[app] ${message}`);
+    console[type](`[app] ${message}`); // eslint-disable-line
   }
 }

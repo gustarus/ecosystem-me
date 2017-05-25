@@ -2,8 +2,6 @@ import Scene from '@core/views/scene';
 import Indicator from '@core/views/indicator';
 import Section from '@core/views/section';
 import Return from '@core/views/return';
-import Svg from '@core/views/svg';
-import config from '@core/config';
 
 export default class extends React.Component {
 
@@ -32,44 +30,8 @@ export default class extends React.Component {
     });
   }
 
-  render() {
-    const isInteractive = !_.isMobile();
-
-    return (
-      <Section>
-        <Return position='relative'/>
-
-        <Scene ref={ref => this.scene = ref}
-               data-zoom={this.state.zoom}
-               type='infographic'
-               onMouseMove={isInteractive && this.onMouseMove}
-               onClick={isInteractive && this.onPictureClick}>
-          {this.renderPicture()}
-        </Scene>
-      </Section>
-    );
-  }
-
-  renderPicture() {
-    const {src, zoom, x, y} = this.state;
-    const scale = zoom ? 2 : 1;
-    const style = {transform: `scale(${scale})`, marginLeft: x, marginTop: y};
-
-    if (!this.state.src) {
-      return <Indicator/>;
-    }
-
-    return (
-      <img ref={ref => this.picture = ref}
-           className='scene-infographic__picture'
-           style={style}
-           src={src}/>
-    );
-  }
-
   calculatePictureOffset(cursorX, cursorY) {
     const content = this.scene.content;
-    const picture = this.picture;
 
     const centerX = content.clientWidth / 2;
     const centerY = content.clientHeight / 2;
@@ -103,5 +65,40 @@ export default class extends React.Component {
     } else {
       this.setState({zoom: false, x: null, y: null});
     }
+  }
+
+  renderPicture() {
+    const {src, zoom, x, y} = this.state;
+    const scale = zoom ? 2 : 1;
+    const style = {transform: `scale(${scale})`, marginLeft: x, marginTop: y};
+
+    if (!this.state.src) {
+      return <Indicator/>;
+    }
+
+    return (
+      <img ref={ref => this.picture = ref}
+           className='scene-infographic__picture'
+           style={style}
+           src={src}/>
+    );
+  }
+
+  render() {
+    const isInteractive = !_.isMobile();
+
+    return (
+      <Section>
+        <Return position='relative'/>
+
+        <Scene ref={ref => this.scene = ref}
+               data-zoom={this.state.zoom}
+               type='infographic'
+               onMouseMove={isInteractive && this.onMouseMove}
+               onClick={isInteractive && this.onPictureClick}>
+          {this.renderPicture()}
+        </Scene>
+      </Section>
+    );
   }
 }

@@ -11,10 +11,12 @@ export default class extends React.Component {
       content = <div className='block__content'>{this.props.children}</div>;
     }
 
-    return <div className={'block' + (this.props.className ? ' ' + this.props.className : '')}>
-      {title}
-      {content}
-    </div>;
+    return (
+      <div className={'block' + (this.props.className ? ' ' + this.props.className : '')}>
+        {title}
+        {content}
+      </div>
+    );
   }
 }
 

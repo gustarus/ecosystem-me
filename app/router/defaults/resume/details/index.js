@@ -1,6 +1,5 @@
 import Scene from '@core/views/scene';
 import Block from '@core/views/block';
-import Table from '@core/views/table';
 import Education from '@core/views/blocks/education';
 import Experience from '@core/views/blocks/experience';
 import Links from '@core/views/blocks/links';
@@ -11,20 +10,6 @@ import MediumHeader from '@core/views/header/medium';
 import SmallHeader from '@core/views/header/small';
 
 export default class extends React.Component {
-
-  render() {
-    return (
-      <Scene type='details'>
-        <Activities title='Publications' items={this.props.publications}/>
-        {this.renderTarget()}
-        <Experience title='Work experience' items={this.props.experience}/>
-        <Skills title='Key skills' tags={this.props.skills.tags} languages={this.props.skills.languages}/>
-        <Education title='Education' items={this.props.education}/>
-        <Activities title='Completed courses' items={this.props.courses}/>
-        <Links title='Links' items={this.props.links}/>
-      </Scene>
-    );
-  }
 
   renderTarget() {
     if (!this.props.target) {
@@ -37,6 +22,20 @@ export default class extends React.Component {
         <MediumHeader children={this.props.target.company}/>
         <SmallHeader children={this.props.target.description}/>
       </Block>
+    );
+  }
+
+  render() {
+    return (
+      <Scene type='details'>
+        <Activities title='Publications' items={this.props.publications}/>
+        {this.renderTarget()}
+        <Experience title='Work experience' items={this.props.experience}/>
+        <Skills title='Key skills' tags={this.props.skills.tags} languages={this.props.skills.languages}/>
+        <Education title='Education' items={this.props.education}/>
+        <Activities title='Completed courses' items={this.props.courses}/>
+        <Links title='Links' items={this.props.links}/>
+      </Scene>
     );
   }
 }

@@ -43,4 +43,4 @@ export default class extends Base {
   delete(name) {
     this.set(name, '', -1);
   }
-};
+}

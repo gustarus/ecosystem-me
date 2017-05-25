@@ -396,7 +396,7 @@ export default {
       date: '05.06.2017',
       title: 'Where the react native ends',
       description: '<a href="http://frontendconf.ru/" target="_blank">Frontend Conf</a>, Moscow, Skolkovo Innovation Center',
-      summary: `Hey!`,
+      summary: 'Hey!',
 
       links: [
         {
@@ -628,4 +628,4 @@ export default {
       ]
     }
   }
-}
+};

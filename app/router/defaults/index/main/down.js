@@ -12,6 +12,10 @@ export default class extends React.Component {
     this.delegateAnimation();
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    return this.state.visible !== nextState.visible;
+  }
+
   componentWillUpdate() {
     this.undelegateAnimation();
   }
@@ -34,24 +38,25 @@ export default class extends React.Component {
     window.removeEventListener('resize', this.onWindowChangeDebounced);
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
-    return this.state.visible !== nextState.visible;
-  }
-
-  render() {
-    const component = this.state.visible ? <div className='scene-main__down'></div> : null;
-    return <ReactCSSTransitionGroup transitionName='scene-main__down'
-                                    transitionAppear={true}
-                                    transitionAppearTimeout={500}
-                                    transitionEnterTimeout={500}
-                                    transitionLeaveTimeout={500}>{component}</ReactCSSTransitionGroup>;
-  }
-
   onWindowChange() {
     this.setState({
       visible: window.innerWidth >= this.props.threshold.width
       && window.innerHeight >= this.props.threshold.height
       && window.scrollY <= this.props.threshold.scroll
     });
+  }
+
+  render() {
+    const component = this.state.visible
+      ? <div className='scene-main__down'/> : null;
+
+    return (
+      <ReactCSSTransitionGroup transitionName='scene-main__down'
+                               transitionAppear
+                               transitionAppearTimeout={500}
+                               transitionEnterTimeout={500}
+                               transitionLeaveTimeout={500}>{component}
+      </ReactCSSTransitionGroup>
+    );
   }
 }

@@ -4,7 +4,7 @@ export default class extends React.Component {
 
   render() {
     const tags = _.map(this.props.tags, (item, index) => {
-      return <li key={index} data-value={item}>{index}</li>
+      return <li key={index} data-value={item}>{index}</li>;
     });
 
     const languages = _.map(this.props.languages, (item, index) => {

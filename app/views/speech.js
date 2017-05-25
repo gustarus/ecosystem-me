@@ -18,21 +18,23 @@ export default class extends React.Component {
   }
 
   render() {
-    return <Section type={[this.props.type, 'speech']}>
-      <Scene type={this.props.type}>
-        <Svg id={this.props.icon} className={'scene-' + this.props.type + '__icon'}/>
-        <Return/>
-      </Scene>
+    return (
+      <Section type={[this.props.type, 'speech']}>
+        <Scene type={this.props.type}>
+          <Svg id={this.props.icon} className={'scene-' + this.props.type + '__icon'}/>
+          <Return/>
+        </Scene>
 
-      <Scene type='details'>
-        <Block className='block_summary'>
-          <HugeHeader children={this.props.title}/>
-          <MediumHeader children={this.props.description}/>
-          <SmallHeader children={translate.asDate(this.props.date)}/>
-          <Html children={this.props.summary}/>
-        </Block>
-        <Links title='Links' className='block_summary' items={this.props.links}/>
-      </Scene>
-    </Section>;
+        <Scene type='details'>
+          <Block className='block_summary'>
+            <HugeHeader children={this.props.title}/>
+            <MediumHeader children={this.props.description}/>
+            <SmallHeader children={translate.asDate(this.props.date)}/>
+            <Html children={this.props.summary}/>
+          </Block>
+          <Links title='Links' className='block_summary' items={this.props.links}/>
+        </Scene>
+      </Section>
+    );
   }
 }

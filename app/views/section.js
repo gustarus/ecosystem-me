@@ -28,8 +28,8 @@ export default class extends React.Component {
     document.removeEventListener('keydown', this.onDocumentKeyDown);
   }
 
-  onDocumentKeyDown(e) {
-    e = e || window.event;
+  onDocumentKeyDown(eRaw) {
+    const e = eRaw || window.event;
     let isEscape;
     if ('key' in e) {
       isEscape = e.key === 'Escape';
@@ -47,8 +47,7 @@ export default class extends React.Component {
     const {type} = this.props;
     const classes = ['section'];
     const suffixes = type instanceof Array
-      ? type.map(type => `section-${type}`) : [`section-${type}`];
-
+      ? type.map(innerType => `section-${innerType}`) : [`section-${type}`];
 
     return (
       <div className={classes.concat(suffixes).join(' ')}>
@@ -56,4 +55,4 @@ export default class extends React.Component {
       </div>
     );
   }
-};
+}

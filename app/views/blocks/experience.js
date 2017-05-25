@@ -17,20 +17,24 @@ export default class extends React.Component {
     const blocks = this.props.items.map((item, index) => {
       const period = translate.asPeriod(item.period[0], item.period[1]);
 
-      return <Block className='group__block block_experience' label={period} key={index}>
-        <div>
-          <LargeHeader children={item.specialization}/>
-          <MediumHeader children={item.company}/>
-          <SmallHeader children={item.description}/>
-          <Html children={item.content}/>
-        </div>
-      </Block>;
+      return (
+        <Block className='group__block block_experience' label={period} key={index}>
+          <div>
+            <LargeHeader children={item.specialization}/>
+            <MediumHeader children={item.company}/>
+            <SmallHeader children={item.description}/>
+            <Html children={item.content}/>
+          </div>
+        </Block>
+      );
     });
 
-    return <div className='group'>
-      <Block title={'Work experience — ' + translate.asDuration(moment.duration(total, 'months'))} className='group__block'/>
-      {blocks}
-    </div>;
+    return (
+      <div className='group'>
+        <Block title={'Work experience — ' + translate.asDuration(moment.duration(total, 'months'))} className='group__block'/>
+        {blocks}
+      </div>
+    );
   }
 }
 
