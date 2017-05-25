@@ -7,9 +7,9 @@ export default class extends React.Component {
 
   render() {
     const rows = this.props.items.map((item, index) => {
-      return <div className="block__row" key={index}>
-        <div className="block__label">{item.label}</div>
-        <div className="block__content">
+      return <div className='block__row' key={index}>
+        <div className='block__label'>{item.label}</div>
+        <div className='block__content'>
           <LargeHeader children={item.name}/>
           <MediumHeader children={item.specialization}/>
           <SmallHeader children={item.description}/>

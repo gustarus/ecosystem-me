@@ -12,16 +12,16 @@ export default class extends React.Component {
     });
 
     const rows = [
-      <div className="block__row" key="1">
-        <div className="block__label">Skills</div>
-        <div className="block__content">
-          <ul className="tags">{tags}</ul>
+      <div className='block__row' key='1'>
+        <div className='block__label'>Skills</div>
+        <div className='block__content'>
+          <ul className='tags'>{tags}</ul>
         </div>
       </div>,
 
-      <div className="block__row" key="2">
-        <div className="block__label">Languages</div>
-        <div className="block__content">{languages}</div>
+      <div className='block__row' key='2'>
+        <div className='block__label'>Languages</div>
+        <div className='block__content'>{languages}</div>
       </div>
     ];
 

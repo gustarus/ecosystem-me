@@ -18,9 +18,9 @@ export default class extends React.Component {
         date = moment(item.date, 'DD.MM.YYYY').format('MMMM D, YYYY');
       }
 
-      return <div className="block__row" key={index}>
-        <div className="block__label">{date}</div>
-        <div className="block__content">
+      return <div className='block__row' key={index}>
+        <div className='block__label'>{date}</div>
+        <div className='block__content'>
           <LargeHeader href={item.url} children={item.title}/>
           <SmallHeader children={item.description}/>
         </div>

@@ -37,11 +37,11 @@ export default class extends React.Component {
 
     return (
       <Section>
-        <Return position="relative"/>
+        <Return position='relative'/>
 
         <Scene ref={ref => this.scene = ref}
                data-zoom={this.state.zoom}
-               type="infographic"
+               type='infographic'
                onMouseMove={isInteractive && this.onMouseMove}
                onClick={isInteractive && this.onPictureClick}>
           {this.renderPicture()}
@@ -61,7 +61,7 @@ export default class extends React.Component {
 
     return (
       <img ref={ref => this.picture = ref}
-           className="scene-infographic__picture"
+           className='scene-infographic__picture'
            style={style}
            src={src}/>
     );

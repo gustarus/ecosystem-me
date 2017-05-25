@@ -37,7 +37,7 @@ export default class extends React.Component {
         <Hello {...resume}/>
       </Facade>
 
-      <ReactCSSTransitionGroup transitionName="transition-section" transitionEnterTimeout={300} transitionLeaveTimeout={300}>
+      <ReactCSSTransitionGroup transitionName='transition-section' transitionEnterTimeout={300} transitionLeaveTimeout={300}>
         {React.cloneElement(this.props.children, { key: segment })}
       </ReactCSSTransitionGroup>
     </Theater>;

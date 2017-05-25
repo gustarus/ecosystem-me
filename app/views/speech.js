@@ -24,14 +24,14 @@ export default class extends React.Component {
         <Return/>
       </Scene>
 
-      <Scene type="details">
-        <Block className="block_summary">
+      <Scene type='details'>
+        <Block className='block_summary'>
           <HugeHeader children={this.props.title}/>
           <MediumHeader children={this.props.description}/>
           <SmallHeader children={translate.asDate(this.props.date)}/>
           <Html children={this.props.summary}/>
         </Block>
-        <Links title="Links" className="block_summary" items={this.props.links}/>
+        <Links title='Links' className='block_summary' items={this.props.links}/>
       </Scene>
     </Section>;
   }

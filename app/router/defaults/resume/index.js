@@ -17,9 +17,9 @@ export default class extends React.Component {
 
     return (
       <Section>
-        <div className="noprint">
-          <Scene type="resume">
-            <Svg id="resume" className="scene-resume__icon"/>
+        <div className='noprint'>
+          <Scene type='resume'>
+            <Svg id='resume' className='scene-resume__icon'/>
             <Return/>
           </Scene>
         </div>

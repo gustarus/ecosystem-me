@@ -101,7 +101,7 @@ export default class extends React.Component {
       left: triangleOffsetHalf + 'px'
     };
 
-    return (<div className="scene-main__triangles" style={offset}>{triangles}</div>);
+    return (<div className='scene-main__triangles' style={offset}>{triangles}</div>);
   }
 
   componentDidMount() {

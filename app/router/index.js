@@ -14,19 +14,19 @@ import SpeechesCanvasPage from '@core/router/speeches/canvas';
 export default () => {
   return (
     <Router history={browserHistory}>
-      <Route path="/" component={DefaultsIndexPage}>
+      <Route path='/' component={DefaultsIndexPage}>
         <IndexRoute component={Mock}/>
-        <Route path="resume" component={DefaultsResumePage}/>
-        <Route path="infographic" component={DefaultsInfographicPage}/>
-        <Route path="speeches">
-          <IndexRedirect to="/"/>
-          <Route path="frontendconf" component={SpeechesFrontendconfPage}/>
-          <Route path="holyjs" component={SpeechesHolyjsPage}/>
-          <Route path="moscowjs" component={SpeechesMoscowjsPage}/>
-          <Route path="database" component={SpeechesDatabasePage}/>
-          <Route path="canvas" component={SpeechesCanvasPage}/>
+        <Route path='resume' component={DefaultsResumePage}/>
+        <Route path='infographic' component={DefaultsInfographicPage}/>
+        <Route path='speeches'>
+          <IndexRedirect to='/'/>
+          <Route path='frontendconf' component={SpeechesFrontendconfPage}/>
+          <Route path='holyjs' component={SpeechesHolyjsPage}/>
+          <Route path='moscowjs' component={SpeechesMoscowjsPage}/>
+          <Route path='database' component={SpeechesDatabasePage}/>
+          <Route path='canvas' component={SpeechesCanvasPage}/>
         </Route>
-        <Redirect from="*" to="/"/>
+        <Redirect from='*' to='/'/>
       </Route>
     </Router>
   );
