@@ -2,6 +2,7 @@ import Scene from '@core/views/scene';
 import Indicator from '@core/views/indicator';
 import Section from '@core/views/section';
 import Return from '@core/views/return';
+import config from '@core/config';
 
 export default class extends React.Component {
 
