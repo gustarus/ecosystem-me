@@ -18,7 +18,7 @@ export default class extends React.Component {
   }
 
   render() {
-    return <Section>
+    return <Section type={[this.props.type, 'speech']}>
       <Scene type={this.props.type}>
         <Svg id={this.props.icon} className={'scene-' + this.props.type + '__icon'}/>
         <Return/>

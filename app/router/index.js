@@ -5,6 +5,7 @@ import Mock from '@core/views/mock'
 import DefaultsIndexPage from '@core/router/defaults/index'
 import DefaultsResumePage from '@core/router/defaults/resume'
 import DefaultsInfographicPage from '@core/router/defaults/infographic'
+import SpeechesFrontendconfPage from '@core/router/speeches/frontendconf'
 import SpeechesHolyjsPage from '@core/router/speeches/holyjs'
 import SpeechesMoscowjsPage from '@core/router/speeches/moscowjs'
 import SpeechesDatabasePage from '@core/router/speeches/database'
@@ -19,6 +20,7 @@ export default () => {
         <Route path="infographic" component={DefaultsInfographicPage}/>
         <Route path="speeches">
           <IndexRedirect to="/"/>
+          <Route path="frontendconf" component={SpeechesFrontendconfPage}/>
           <Route path="holyjs" component={SpeechesHolyjsPage}/>
           <Route path="moscowjs" component={SpeechesMoscowjsPage}/>
           <Route path="database" component={SpeechesDatabasePage}/>

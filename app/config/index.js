@@ -280,6 +280,12 @@ export default {
 
       speeches: [
         {
+          date: '05.06.2017',
+          url: '/speeches/frontendconf',
+          title: 'Where the react native ends',
+          description: 'Frontend Conf, Skolkovo Innovation Center'
+        },
+        {
           date: '11.12.2016',
           url: '/speeches/holyjs',
           title: 'The web is mutating',
@@ -386,6 +392,20 @@ export default {
   },
 
   speeches: {
+    frontendconf: {
+      date: '05.06.2017',
+      title: 'Where the react native ends',
+      description: '<a href="http://frontendconf.ru/" target="_blank">Frontend Conf</a>, Moscow, Skolkovo Innovation Center',
+      summary: `Hey!`,
+
+      links: [
+        {
+          title: 'The thesis',
+          url: '//frontendconf.ru/2017/abstracts/2496'
+        }
+      ]
+    },
+
     holyjs: {
       date: '11.12.2016',
       title: 'The web is mutating',

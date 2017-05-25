@@ -44,6 +44,16 @@ export default class extends React.Component {
   }
 
   render() {
-    return <div className="section">{this.props.children}</div>;
+    const {type} = this.props;
+    const classes = ['section'];
+    const suffixes = type instanceof Array
+      ? type.map(type => `section-${type}`) : [`section-${type}`];
+
+
+    return (
+      <div className={classes.concat(suffixes).join(' ')}>
+        {this.props.children}
+      </div>
+    );
   }
 };
