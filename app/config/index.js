@@ -403,28 +403,36 @@ export default {
 
       links: [
         {
-          title: 'Тезис на сайте frontendconf',
+          title: '<strong>Тезис на сайте frontendconf</strong>',
           url: 'http://frontendconf.ru/2017/abstracts/2496'
         },
         {
-          title: 'Презентация<br/>(pdf, без видео)',
+          title: '<strong>Презентация</strong><br/>(pdf, без видео)',
           url: '//cloud.webulla.ru/me/speeches/frontendconf/Where the react native ends.pdf'
         },
         {
-          title: 'Презентация с комментариями<br/>(pdf, без видео)',
-          url: '//cloud.webulla.ru/me/speeches/frontendconf/Where the react native ends (with presenter notes).pdf'
+          title: '<strong>Презентация с комментариями</strong><br/>(pdf, без видео)',
+          url: '//cloud.webulla.ru/me/speeches/frontendconf/Where the react native ends - With presenter notes.pdf'
         },
         {
-          title: 'Комментарии к слайдам',
-          url: '//cloud.webulla.ru/me/speeches/frontendconf/Where the react native ends (presenter notes).pdf'
+          title: '<strong>Шрифты для презентации</strong><br/>(для keynote и powerpoint)',
+          url: '//cloud.webulla.ru/me/speeches/frontendconf/Where the react native ends - Fonts.zip'
         },
         {
-          title: 'Презентация<br/>в keynote<br/>(все в одном)',
+          title: '<strong>Презентация</strong><br/>в keynote<br/>(все в одном)',
           url: '//cloud.webulla.ru/me/speeches/frontendconf/Where the react native ends.key'
         },
         {
-          title: 'Презентация<br/>в powerpoint<br/>(все в одном)',
-          url: '//cloud.webulla.ru/me/speeches/frontendconf/Where the react native ends.pptx'
+          title: '<strong>Презентация</strong><br/>в powerpoint<br/>(все в одном)',
+          url: '//cloud.webulla.ru/me/speeches/frontendconf/Where the react native ends.zip'
+        },
+        {
+          title: '<strong>Комментарии к слайдам</strong>',
+          url: '//cloud.webulla.ru/me/speeches/frontendconf/Where the react native ends - Presenter notes.pdf'
+        },
+        {
+          title: '<strong>Road map к выступлению</strong>',
+          url: '//cloud.webulla.ru/me/speeches/frontendconf/Where the react native ends - Presentation road map.pdf'
         }
       ]
     },
