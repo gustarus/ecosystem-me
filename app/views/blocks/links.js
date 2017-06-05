@@ -28,6 +28,6 @@ export default class extends React.Component {
         ? this.renderLinksBlock(index, item) : this.renderLink(index, item);
     });
 
-    return <Table title={this.props.title}>{rows}</Table>;
+    return <Table title={this.props.title} className={this.props.className}>{rows}</Table>;
   }
 }

@@ -32,7 +32,7 @@ export default class extends React.Component {
             <SmallHeader children={translate.asDate(this.props.date)}/>
             <Html children={this.props.summary}/>
           </Block>
-          <Links title='Links' className='block_summary' items={this.props.links}/>
+          <Links title='Links' className='block_links' items={this.props.links}/>
         </Scene>
       </Section>
     );

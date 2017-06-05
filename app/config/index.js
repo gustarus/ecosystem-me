@@ -407,7 +407,7 @@ export default {
           url: 'http://frontendconf.ru/2017/abstracts/2496'
         },
         {
-          title: '<strong>Презентация</strong><br/>(pdf, без видео)',
+          title: '<strong>Презентация</strong> (pdf, без видео)',
           url: '//cloud.webulla.ru/me/speeches/frontendconf/Where the react native ends.pdf'
         },
         {
@@ -419,11 +419,11 @@ export default {
           url: '//cloud.webulla.ru/me/speeches/frontendconf/Where the react native ends - Fonts.zip'
         },
         {
-          title: '<strong>Презентация</strong><br/>в keynote<br/>(все в одном)',
+          title: '<strong>Презентация</strong> в keynote<br/>(все в одном)',
           url: '//cloud.webulla.ru/me/speeches/frontendconf/Where the react native ends.key'
         },
         {
-          title: '<strong>Презентация</strong><br/>в powerpoint<br/>(все в одном)',
+          title: '<strong>Презентация</strong> в powerpoint<br/>(все в одном)',
           url: '//cloud.webulla.ru/me/speeches/frontendconf/Where the react native ends.zip'
         },
         {
@@ -433,6 +433,46 @@ export default {
         {
           title: '<strong>Road map к выступлению</strong>',
           url: '//cloud.webulla.ru/me/speeches/frontendconf/Where the react native ends - Presentation road map.pdf'
+        },
+
+        {
+          title: 'Все ссылки из примечаний (с номерами слайдов)',
+          links: [
+            {title: '[#6] <strong>Rambler&Co, интернет-холинг</strong>', url: 'https://rambler-co.ru'},
+            {title: '[#7] <strong>Lenta.ru, медийный портал</strong>', url: 'https://lenta.ru'},
+            {title: '[#19] <strong>9 Top JavaScript Frameworks For Mobile App Development</strong>', url: 'https://dzone.com/articles/9-top-javascript-frameworks-for-mobile-app-develop'},
+            {title: '[#19] <strong>5 Most Popular Frameworks for MD</strong>', url: 'https://medium.com/@eduoshaun/5-most-popular-frameworks-for-mobile-development-4089ffbf536f'},
+            {title: '[#20] <strong>Kotlin, statically typed programming language</strong>', url: 'http://kotlinlang.org/'},
+            {title: '[#20] <strong>Haxe, the cross-platform toolkit</strong>', url: 'http://haxe.org/'},
+            {title: '[#20] <strong>LUA, a lightweight multi-paradigm programming language</strong>', url: 'http://www.lua.org/about.html'},
+            {title: '[#21] <strong>Cordova, mobile development framework</strong>', url: 'https://cordova.apache.org/docs/en/latest/guide/overview/index.html'},
+            {title: '[#21] <strong>PhoneGAP, framework based on Cordova</strong>', url: 'http://phonegap.com/'},
+            {title: '[#21] <strong>Ionic, sdk for developing native and progressive web apps</strong>', url: 'http://ionicframework.com/'},
+            {title: '[#21] <strong>Monaca, cross-platform hybrid mobile app development platform</strong>', url: 'https://monaca.io/'},
+            {title: '[#21] <strong>React Native, mobile apps with react</strong>', url: 'https://facebook.github.io/react-native/'},
+            {title: '[#21] <strong>Xamarin, cross-platform development software</strong>', url: 'https://www.xamarin.com/'},
+            {title: '[#21] <strong>Meteor, development platform, a collection of libraries and packages</strong>', url: 'http://joshowens.me/what-is-meteor-js/'},
+            {title: '[#21] <strong>React native + Meteor</strong>', url: 'https://medium.com/handlebar-labs/react-native-meteor-react-native-meteor-vs-meteor-client-bundler-f7597442ed0'},
+            {title: '[#21] <strong>Expo, platform which uses React Native</strong>', url: '//expo.io'},
+            {title: '[#22] <strong>Unity 3D, многоплатформенный игровой движок</strong>', url: 'https://unity3d.com/ru/unity/'},
+            {title: '[#22] <strong>Unreal Engine, powerful creation engine</strong>', url: 'https://www.unrealengine.com/what-is-unreal-engine-4'},
+            {title: '[#22] <strong>Marmelade, cross-platform solution for game developers</strong>', url: 'http://docs.madewithmarmalade.com/display/MD/Home'},
+            {title: '[#22] <strong>Ionic Creator, a simple drag-&-drop tool for going from idea to App Store</strong>', url: 'http://ionic.io/products/creator'},
+            {title: '[#22] <strong>Xcode, Interface Builder</strong>', url: 'https://developer.apple.com/xcode/'},
+            {title: '[#28] <strong>ActivityIndicator, компонент индикатора активности</strong>', url: 'https://facebook.github.io/react-native/docs/activityindicator.html'},
+            {title: '[#32] <strong>ActivityIndicator, компонент индикатора активности,</strong>', url: 'https://github.com/facebook/react-native/blob/0.45-stable/Libraries/Components/ActivityIndicator/ActivityIndicator.js'},
+            {title: '[#32] <strong>requireNativeComponent, возвращает обертку для нативного компонента</strong>', url: 'https://github.com/facebook/react-native/blob/0.45-stable/Libraries/ReactNative/requireNativeComponent.js'},
+            {title: '[#32] <strong>createReactNativeComponentClass, создает обертку для нативного компонента</strong>', url: 'https://github.com/facebook/react-native/blob/0.45-stable/Libraries/Renderer/src/renderers/native/createReactNativeComponentClass.js'},
+            {title: '[#36] <strong>Create native UI component in React Native</strong>', url: 'https://medium.com/ibm-watson-developer-cloud/create-native-ui-component-in-react-native-6f4b7fe4cc95'},
+            {title: '[#36] <strong>React Native: Into a new world of rapid iOS development</strong>', url: 'https://www.ibm.com/developerworks/library/mo-bluemix-react-native-ios8/index.html'},
+            {title: '[#38] <strong>JavaScript Core</strong>', url: 'https://developer.apple.com/reference/javascriptcore'},
+            {title: '[#40] <strong>Bridging in React Native</strong>', url: 'https://tadeuzagallo.com/blog/react-native-bridge/'},
+            {title: '[#57] <strong>Breaking up Heavy Processing in React Native</strong>', url: 'https://corbt.com/posts/2015/12/22/breaking-up-heavy-processing-in-react-native.html'},
+            {title: '[#59] <strong>Barbaric basics: web workers</strong>', url: 'https://www.barbarianmeetscoding.com/blog/2015/02/13/barbaric-basics-web-workers/'},
+            {title: '[#60] <strong>Package react-native-workers (react native > v0.41)</strong>', url: 'https://github.com/fabriciovergal/react-native-workers'},
+            {title: '[#65] <strong>Performance Limitations of React Native and How to Overcome Them</strong>', url: 'https://medium.com/@talkol/performance-limitations-of-react-native-and-how-to-overcome-them-947630d7f440'},
+            {title: '[#65] <strong>React Native Performance — An Updated Example</strong>', url: 'https://hackernoon.com/react-native-performance-an-updated-example-6516bfde9c5c'}
+          ]
         }
       ]
     },
