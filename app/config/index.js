@@ -211,7 +211,7 @@ export default {
             <p>I improved the company web-site. I developed flash presentation which contains information about the company. My first official working place.</p>
             <ul data-label="General results">
               <li>I developed flash presentation. I used 3d models.</li>
-              <li>I learned basic зossibilities of the action script.</li>
+              <li>I learned basic possibilities of the action script.</li>
             </ul>
             <p><small>Used skills: php, mysql, java script, zend framework.</small></p>`
         }
