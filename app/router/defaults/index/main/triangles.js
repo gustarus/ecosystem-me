@@ -29,20 +29,32 @@ export default class extends React.Component {
 
   delegateAnimation() {
     this.el = ReactDOM.findDOMNode(this);
-    this.triangles = this.el.querySelectorAll('.scene-main__triangle');
+    this.nodes = this.el.querySelectorAll('div[data-triangle="true"]');
+    this.triangles = Array.prototype.slice.call(this.nodes);
+    this.score = this.el.querySelector('div[data-score="true"]');
+    this.score.current = this.score.querySelector('span[data-type="current"]');
+    this.score.maximum = this.score.querySelector('span[data-type="maximum"]');
 
     if (!_.isMobile()) {
       // delegate triangles click event
       this.el.addEventListener('click', event => {
-        if (event.target && (' ' + event.target.className + ' ').indexOf(' scene-main__triangle ') >= 0) {
-          this.animateTriangle(event.target);
+        if (event.target && event.target.dataset.triangle) {
+          this.delegateTriangleToTheGame(event.target);
+          this.delegateGame();
         }
       }, false);
 
       // initialize interval animation
       this.interval = setInterval(() => {
-        const i = _.random(0, this.triangles.length);
-        this.animateTriangle(this.triangles[i]);
+        // get only visible triangles
+        const visibleUnits = this.triangles
+          .filter(triangle => triangle.dataset.visible);
+
+        // get random visible triangle index
+        const i = _.random(0, visibleUnits.length);
+
+        // initialize animation loop for the triangle
+        this.delegateTriangleAnimation(visibleUnits[i]);
       }, this.props.animation.showFor);
     }
 
@@ -52,15 +64,45 @@ export default class extends React.Component {
     };
   }
 
-  animateTriangle(triangle) {
+  delegateTriangleAnimation(triangle) {
     if (triangle) {
-      triangle.className += ' scene-main__triangle_hidden';
+      triangle.dataset.visible = 'false';
       setTimeout(() => {
-        if (triangle) {
-          triangle.className = triangle.className.replace(' scene-main__triangle_hidden', '');
-        }
+        triangle.dataset.visible = 'true';
       }, this.props.animation.showFor);
     }
+  }
+
+  delegateTriangleToTheGame(triangle) {
+    if (triangle) {
+      // hide triangle
+      triangle.dataset.visible = 'false';
+      this.gameTriangles = this.gameTriangles || [];
+      this.gameTriangles.push(triangle);
+
+      // calculate current score and maximum score
+      const score = this.gameTriangles.length;
+      const largest = parseInt(this.score.maximum.innerText, 10);
+      const maximum = score > largest ? score : largest;
+      localStorage.setItem('score', maximum);
+
+      // set score to the board
+      this.score.dataset.visible = 'true';
+      this.score.current.innerText = score;
+      this.score.maximum.innerText = maximum;
+    }
+  }
+
+  delegateGame() {
+    if (!this.gameTimerId) {
+      this.gameTimerId = setTimeout(() => this.undelegateGame(), 10000);
+    }
+  }
+
+  undelegateGame() {
+    this.gameTriangles.forEach(triangle => triangle.dataset.visible = true);
+    delete this.gameTriangles;
+    delete this.gameTimerId;
   }
 
   undelegateAnimation() {
@@ -156,7 +198,7 @@ export default class extends React.Component {
 
           // create triangle object
           const className = 'scene-main__triangle' + (isRightCorner ? ' scene-main__triangle_swapped' : '');
-          const triangle = <div key={y + '-' + x} className={className} style={style}/>;
+          const triangle = <div key={y + '-' + x} data-triangle data-visible className={className} style={style}/>;
           triangles.push(triangle);
         }
       });
@@ -170,6 +212,22 @@ export default class extends React.Component {
       left: triangleOffsetHalf + 'px'
     };
 
-    return (<div className='scene-main__triangles' style={offset}>{triangles}</div>);
+    // get maximum score
+    const maximum = parseInt(localStorage.getItem('score'), 10) || 0;
+
+    return (
+      <div className='scene-main__triangles' style={offset}>
+        {triangles}
+        <div className='scene-main__score' data-score data-visible='false'>
+          <div className='scene-main__score__part'>
+            <span className='scene-main__score__label'>Текущий<br/>счет</span>
+            <br/><span className='scene-main__score__value' data-type='current'>0</span>
+          </div>
+          <div className='scene-main__score__part'>
+            <span className='scene-main__score__label'>Лучший<br/>результат</span>
+            <br/><span className='scene-main__score__value' data-type='maximum'>{maximum}</span>
+          </div>
+        </div>
+      </div>);
   }
 }
