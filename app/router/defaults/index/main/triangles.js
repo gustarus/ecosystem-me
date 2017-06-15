@@ -73,8 +73,8 @@ export default class extends React.Component {
   delegateTriangleToTheGame(triangle) {
     if (triangle) {
       triangle.dataset.visible = 'false';
-      this.gameStriangles = this.gameStriangles || [];
-      this.gameStriangles.push(triangle);
+      this.gameTriangles = this.gameTriangles || [];
+      this.gameTriangles.push(triangle);
     }
   }
 
@@ -85,7 +85,7 @@ export default class extends React.Component {
   }
 
   undelegateGame() {
-    this.gameStriangles.forEach(triangle => triangle.dataset.visible = true);
+    this.gameTriangles.forEach(triangle => triangle.dataset.visible = true);
     delete this.gameTriangles;
     delete this.gameTimerId;
   }
