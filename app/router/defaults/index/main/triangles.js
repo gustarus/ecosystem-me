@@ -35,14 +35,23 @@ export default class extends React.Component {
       // delegate triangles click event
       this.el.addEventListener('click', event => {
         if (event.target && (' ' + event.target.className + ' ').indexOf(' scene-main__triangle ') >= 0) {
-          this.animateTriangle(event.target);
+          this.delegateTriangleToTheGame(event.target);
+          this.delegateGame();
         }
       }, false);
 
       // initialize interval animation
       this.interval = setInterval(() => {
-        const i = _.random(0, this.triangles.length);
-        this.animateTriangle(this.triangles[i]);
+        // get only visible triangles
+        const visibleUnits = Array.prototype.filter.call(this.triangles, triangle => {
+          return triangle.className.indexOf('scene-main__triangle_hidden') === -1;
+        });
+
+        // get random visible triangle index
+        const i = _.random(0, visibleUnits.length);
+
+        // initialize animation loop for the triangle
+        this.delegateTriangleAnimation(visibleUnits[i]);
       }, this.props.animation.showFor);
     }
 
@@ -52,7 +61,7 @@ export default class extends React.Component {
     };
   }
 
-  animateTriangle(triangle) {
+  delegateTriangleAnimation(triangle) {
     if (triangle) {
       triangle.className += ' scene-main__triangle_hidden';
       setTimeout(() => {
@@ -61,6 +70,29 @@ export default class extends React.Component {
         }
       }, this.props.animation.showFor);
     }
+  }
+
+  delegateTriangleToTheGame(triangle) {
+    if (triangle) {
+      triangle.className += ' scene-main__triangle_hidden';
+      this.gameStriangles = this.gameStriangles || [];
+      this.gameStriangles.push(triangle);
+    }
+  }
+
+  delegateGame() {
+    if (!this.gameTimerId) {
+      this.gameTimerId = setTimeout(() => this.undelegateGame(), 10000);
+    }
+  }
+
+  undelegateGame() {
+    this.gameStriangles.forEach(triangle => {
+      triangle.className = triangle.className.replace(' scene-main__triangle_hidden', '');
+    });
+
+    delete this.gameTriangles;
+    delete this.gameTimerId;
   }
 
   undelegateAnimation() {
