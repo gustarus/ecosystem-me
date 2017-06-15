@@ -29,7 +29,7 @@ export default class extends React.Component {
 
   delegateAnimation() {
     this.el = ReactDOM.findDOMNode(this);
-    this.nodes = this.el.querySelectorAll('.scene-main__triangle');
+    this.nodes = this.el.querySelectorAll('div[data-triangle="true"]');
     this.triangles = Array.prototype.slice.call(this.nodes);
 
     if (!_.isMobile()) {
