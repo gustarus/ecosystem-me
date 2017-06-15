@@ -31,6 +31,9 @@ export default class extends React.Component {
     this.el = ReactDOM.findDOMNode(this);
     this.nodes = this.el.querySelectorAll('div[data-triangle="true"]');
     this.triangles = Array.prototype.slice.call(this.nodes);
+    this.score = this.el.querySelector('div[data-score="true"]');
+    this.score.current = this.score.querySelector('span[data-type="current"]');
+    this.score.maximum = this.score.querySelector('span[data-type="maximum"]');
 
     if (!_.isMobile()) {
       // delegate triangles click event
@@ -72,9 +75,21 @@ export default class extends React.Component {
 
   delegateTriangleToTheGame(triangle) {
     if (triangle) {
+      // hide triangle
       triangle.dataset.visible = 'false';
       this.gameTriangles = this.gameTriangles || [];
       this.gameTriangles.push(triangle);
+
+      // calculate current score and maximum score
+      const score = this.gameTriangles.length;
+      const largest = parseInt(this.score.maximum.innerText, 10);
+      const maximum = score > largest ? score : largest;
+      localStorage.setItem('score', maximum);
+
+      // set score to the board
+      this.score.dataset.visible = 'true';
+      this.score.current.innerText = score;
+      this.score.maximum.innerText = maximum;
     }
   }
 
@@ -197,6 +212,22 @@ export default class extends React.Component {
       left: triangleOffsetHalf + 'px'
     };
 
-    return (<div className='scene-main__triangles' style={offset}>{triangles}</div>);
+    // get maximum score
+    const maximum = parseInt(localStorage.getItem('score'), 10) || 0;
+
+    return (
+      <div className='scene-main__triangles' style={offset}>
+        {triangles}
+        <div className='scene-main__score' data-score data-visible='false'>
+          <div className='scene-main__score__part'>
+            <span className='scene-main__score__label'>Текущий<br/>счет</span>
+            <br/><span className='scene-main__score__value' data-type='current'>0</span>
+          </div>
+          <div className='scene-main__score__part'>
+            <span className='scene-main__score__label'>Лучший<br/>результат</span>
+            <br/><span className='scene-main__score__value' data-type='maximum'>{maximum}</span>
+          </div>
+        </div>
+      </div>);
   }
 }
