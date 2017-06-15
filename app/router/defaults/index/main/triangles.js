@@ -29,12 +29,13 @@ export default class extends React.Component {
 
   delegateAnimation() {
     this.el = ReactDOM.findDOMNode(this);
-    this.triangles = this.el.querySelectorAll('.scene-main__triangle');
+    this.nodes = this.el.querySelectorAll('.scene-main__triangle');
+    this.triangles = Array.prototype.slice.call(this.nodes);
 
     if (!_.isMobile()) {
       // delegate triangles click event
       this.el.addEventListener('click', event => {
-        if (event.target && (' ' + event.target.className + ' ').indexOf(' scene-main__triangle ') >= 0) {
+        if (event.target && event.target.dataset.triangle) {
           this.delegateTriangleToTheGame(event.target);
           this.delegateGame();
         }
@@ -43,9 +44,8 @@ export default class extends React.Component {
       // initialize interval animation
       this.interval = setInterval(() => {
         // get only visible triangles
-        const visibleUnits = Array.prototype.filter.call(this.triangles, triangle => {
-          return triangle.className.indexOf('scene-main__triangle_hidden') === -1;
-        });
+        const visibleUnits = this.triangles
+          .filter(triangle => triangle.dataset.visible);
 
         // get random visible triangle index
         const i = _.random(0, visibleUnits.length);
@@ -63,18 +63,16 @@ export default class extends React.Component {
 
   delegateTriangleAnimation(triangle) {
     if (triangle) {
-      triangle.className += ' scene-main__triangle_hidden';
+      triangle.dataset.visible = 'false';
       setTimeout(() => {
-        if (triangle) {
-          triangle.className = triangle.className.replace(' scene-main__triangle_hidden', '');
-        }
+        triangle.dataset.visible = 'true';
       }, this.props.animation.showFor);
     }
   }
 
   delegateTriangleToTheGame(triangle) {
     if (triangle) {
-      triangle.className += ' scene-main__triangle_hidden';
+      triangle.dataset.visible = 'false';
       this.gameStriangles = this.gameStriangles || [];
       this.gameStriangles.push(triangle);
     }
@@ -87,10 +85,7 @@ export default class extends React.Component {
   }
 
   undelegateGame() {
-    this.gameStriangles.forEach(triangle => {
-      triangle.className = triangle.className.replace(' scene-main__triangle_hidden', '');
-    });
-
+    this.gameStriangles.forEach(triangle => triangle.dataset.visible = true);
     delete this.gameTriangles;
     delete this.gameTimerId;
   }
@@ -188,7 +183,7 @@ export default class extends React.Component {
 
           // create triangle object
           const className = 'scene-main__triangle' + (isRightCorner ? ' scene-main__triangle_swapped' : '');
-          const triangle = <div key={y + '-' + x} className={className} style={style}/>;
+          const triangle = <div key={y + '-' + x} data-triangle data-visible className={className} style={style}/>;
           triangles.push(triangle);
         }
       });

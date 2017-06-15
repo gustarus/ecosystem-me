@@ -46,14 +46,18 @@ $sceneFontColorLight = #999
     border 0 solid transparent
     transition opacity .4s
     opacity 1
-    &_hidden
+    &:hover
+    &:focus
+      opacity 0.6
+      cursor pointer
+    &[data-visible="false"]
       opacity 0
+      &:hover
+      &:focus
+        opacity 0
     &_swapped
       +print()
         display none
-    &:not(&_hidden):hover
-      opacity 0.6
-      cursor pointer
   &__down
     display inline-block
     width 0
