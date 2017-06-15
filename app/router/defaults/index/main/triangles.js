@@ -220,11 +220,11 @@ export default class extends React.Component {
         {triangles}
         <div className='scene-main__score' data-score data-visible='false'>
           <div className='scene-main__score__part'>
-            <span className='scene-main__score__label'>Текущий<br/>счет</span>
+            <span className='scene-main__score__label'>Current<br/>score</span>
             <br/><span className='scene-main__score__value' data-type='current'>0</span>
           </div>
           <div className='scene-main__score__part'>
-            <span className='scene-main__score__label'>Лучший<br/>результат</span>
+            <span className='scene-main__score__label'>The best<br/>result</span>
             <br/><span className='scene-main__score__value' data-type='maximum'>{maximum}</span>
           </div>
         </div>
